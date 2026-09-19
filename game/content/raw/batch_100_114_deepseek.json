@@ -1,0 +1,306 @@
+[
+  {
+    "id": 100,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Заползти под упавший дуб",
+        "line": 1,
+        "target": 160
+      },
+      {
+        "label": "Идти сквозь бурю",
+        "line": 2,
+        "target": 102
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 101,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Выпить целебный чай",
+        "line": 1,
+        "target": 537
+      },
+      {
+        "label": "Отказаться от чая",
+        "line": 2,
+        "target": 125
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 102,
+    "narrative": [
+      0
+    ],
+    "choices": [],
+    "check": {
+      "skill": "energy",
+      "branches": [
+        {
+          "from": 2,
+          "to": 6,
+          "target": 105
+        },
+        {
+          "from": 7,
+          "to": 12,
+          "target": 112
+        }
+      ]
+    },
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 103,
+    "narrative": [
+      0,
+      1
+    ],
+    "choices": [
+      {
+        "label": "Взять ключ Луны",
+        "line": 2,
+        "target": 548
+      },
+      {
+        "label": "Взять ключ Розы",
+        "line": 3,
+        "target": 154
+      },
+      {
+        "label": "Взять ключ Змеи",
+        "line": 4,
+        "target": 215
+      },
+      {
+        "label": "Взять ключ с Глазом Осьминога",
+        "line": 5,
+        "target": 236
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 104,
+    "narrative": [
+      0
+    ],
+    "choices": [],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": "death",
+    "square": null
+  },
+  {
+    "id": 105,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Прийти в себя",
+        "line": 0,
+        "target": 521
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 106,
+    "narrative": [
+      0
+    ],
+    "choices": [],
+    "check": null,
+    "effects": [],
+    "forward": true,
+    "ending": null,
+    "square": "5Б"
+  },
+  {
+    "id": 107,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Идти дальше через лес",
+        "line": 0,
+        "target": 291
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 108,
+    "narrative": [
+      0
+    ],
+    "choices": [],
+    "check": {
+      "skill": "insight",
+      "branches": [
+        {
+          "from": 2,
+          "to": 4,
+          "target": 451
+        },
+        {
+          "from": 5,
+          "to": 12,
+          "target": 100
+        }
+      ]
+    },
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 109,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Войти в пещеру",
+        "line": 1,
+        "target": 152
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": true,
+    "ending": null,
+    "square": "1Б"
+  },
+  {
+    "id": 110,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Взобраться на вершину",
+        "line": 0,
+        "target": 443
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 111,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Пойти в дом к здоровяку",
+        "line": 1,
+        "target": 156
+      },
+      {
+        "label": "Предпочесть нору",
+        "line": 2,
+        "target": 306
+      },
+      {
+        "label": "Пройти мимо",
+        "line": 3,
+        "target": 305
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 112,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Упасть на землю",
+        "line": 0,
+        "target": 521
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  },
+  {
+    "id": 113,
+    "narrative": [
+      0
+    ],
+    "choices": [],
+    "check": null,
+    "effects": [],
+    "forward": true,
+    "ending": null,
+    "square": "2В"
+  },
+  {
+    "id": 114,
+    "narrative": [
+      0
+    ],
+    "choices": [
+      {
+        "label": "Войти в пещерку",
+        "line": 0,
+        "target": 213
+      }
+    ],
+    "check": null,
+    "effects": [],
+    "forward": false,
+    "ending": null,
+    "square": null
+  }
+]

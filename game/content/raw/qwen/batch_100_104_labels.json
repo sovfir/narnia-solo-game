@@ -1,0 +1,21 @@
+{
+ "labels": [
+  { "id": 100, "i": 0, "t": "NAR" },
+  { "id": 100, "i": 1, "t": "CHOICE", "target": 160, "label": "Заползти под дуб" },
+  { "id": 100, "i": 2, "t": "CHOICE", "target": 102, "label": "Идти сквозь бурю" },
+  { "id": 101, "i": 0, "t": "NAR" },
+  { "id": 101, "i": 1, "t": "CHOICE", "target": 537, "label": "Выпить чай" },
+  { "id": 101, "i": 2, "t": "CHOICE", "target": 125, "label": "Отказаться от чая" },
+  { "id": 102, "i": 0, "t": "NAR" },
+  { "id": 102, "i": 1, "t": "CHECK", "from": 2, "to": 6, "target": 105, "skill": "energy" },
+  { "id": 102, "i": 2, "t": "CHECK", "from": 7, "to": 12, "target": 112, "skill": "energy" },
+  { "id": 103, "i": 0, "t": "NAR" },
+  { "id": 103, "i": 1, "t": "NAR" },
+  { "id": 103, "i": 2, "t": "CHOICE", "target": 548, "label": "Выбрать ключ Луны" },
+  { "id": 103, "i": 3, "t": "CHOICE", "target": 154, "label": "Выбрать ключ Розы" },
+  { "id": 103, "i": 4, "t": "CHOICE", "target": 215, "label": "Выбрать ключ Змеи" },
+  { "id": 103, "i": 5, "t": "CHOICE", "target": 236, "label": "Выбрать ключ с Глазом Осьминога" },
+  { "id": 104, "i": 0, "t": "END" },
+  { "id": 104, "i": 1, "t": "CHOICE", "label": "Начать с Пролога" }
+ ]
+}

@@ -1,0 +1,12 @@
+# зависимости и кеши инструментов
+game/node_modules/
+game/.npm-cache/
+__pycache__/
+*.pyc
+
+# сборка
+game/dist/
+game/coverage/
+
+# система
+.DS_Store

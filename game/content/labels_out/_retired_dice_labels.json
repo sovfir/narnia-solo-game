@@ -1,0 +1,53 @@
+{
+ "_comment": "Снятые подписи: относились к ветвям броска кубика, которые с 19.09 разбираются как check, а не choices. В интерфейс не попадают; храню для истории. merge_labels.py этот файл не читает (маска *_done.json).",
+ "labels": [
+  {
+   "file": "labels_03_done.json",
+   "id": 160,
+   "idx": 0,
+   "label": "Бросить кубики"
+  },
+  {
+   "file": "labels_03_done.json",
+   "id": 160,
+   "idx": 1,
+   "label": "Бросить кубики снова"
+  },
+  {
+   "file": "labels_06_done.json",
+   "id": 255,
+   "idx": 0,
+   "label": "Карабкаться быстрее"
+  },
+  {
+   "file": "labels_10_done.json",
+   "id": 370,
+   "idx": 0,
+   "label": "Сжать ключ"
+  },
+  {
+   "file": "labels_11_done.json",
+   "id": 391,
+   "idx": 0,
+   "label": "Увернуться от него"
+  },
+  {
+   "file": "labels_11_done.json",
+   "id": 391,
+   "idx": 1,
+   "label": "Нанести удар"
+  },
+  {
+   "file": "labels_13_done.json",
+   "id": 445,
+   "idx": 0,
+   "label": "Продираться сквозь ветки"
+  },
+  {
+   "file": "labels_13_done.json",
+   "id": 445,
+   "idx": 1,
+   "label": "Пробираться сквозь сосны"
+  }
+ ]
+}

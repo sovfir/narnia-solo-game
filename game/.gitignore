@@ -1,0 +1,10 @@
+# зависимости и локальный кеш npm
+node_modules/
+.npm-cache/
+
+# сборка
+dist/
+coverage/
+
+# система
+.DS_Store

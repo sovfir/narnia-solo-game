@@ -1,0 +1,738 @@
+[
+ {
+  "file": "batch_100_104.json",
+  "kind": "nodes",
+  "from": 100,
+  "to": 104,
+  "count": 5,
+  "bytes": 7155
+ },
+ {
+  "file": "batch_105_109.json",
+  "kind": "nodes",
+  "from": 105,
+  "to": 109,
+  "count": 5,
+  "bytes": 5114
+ },
+ {
+  "file": "batch_110_114.json",
+  "kind": "nodes",
+  "from": 110,
+  "to": 114,
+  "count": 5,
+  "bytes": 5211
+ },
+ {
+  "file": "batch_115_119.json",
+  "kind": "nodes",
+  "from": 115,
+  "to": 119,
+  "count": 5,
+  "bytes": 5469
+ },
+ {
+  "file": "batch_120_124.json",
+  "kind": "nodes",
+  "from": 120,
+  "to": 124,
+  "count": 5,
+  "bytes": 5848
+ },
+ {
+  "file": "batch_125_129.json",
+  "kind": "nodes",
+  "from": 125,
+  "to": 129,
+  "count": 5,
+  "bytes": 10864
+ },
+ {
+  "file": "batch_130_134.json",
+  "kind": "nodes",
+  "from": 130,
+  "to": 134,
+  "count": 5,
+  "bytes": 6956
+ },
+ {
+  "file": "batch_135_139.json",
+  "kind": "nodes",
+  "from": 135,
+  "to": 139,
+  "count": 5,
+  "bytes": 5331
+ },
+ {
+  "file": "batch_140_144.json",
+  "kind": "nodes",
+  "from": 140,
+  "to": 144,
+  "count": 5,
+  "bytes": 6843
+ },
+ {
+  "file": "batch_145_149.json",
+  "kind": "nodes",
+  "from": 145,
+  "to": 149,
+  "count": 5,
+  "bytes": 8681
+ },
+ {
+  "file": "batch_150_154.json",
+  "kind": "nodes",
+  "from": 150,
+  "to": 154,
+  "count": 5,
+  "bytes": 5414
+ },
+ {
+  "file": "batch_155_159.json",
+  "kind": "nodes",
+  "from": 155,
+  "to": 159,
+  "count": 5,
+  "bytes": 16018
+ },
+ {
+  "file": "batch_160_164.json",
+  "kind": "nodes",
+  "from": 160,
+  "to": 164,
+  "count": 5,
+  "bytes": 5037
+ },
+ {
+  "file": "batch_165_169.json",
+  "kind": "nodes",
+  "from": 165,
+  "to": 169,
+  "count": 5,
+  "bytes": 6162
+ },
+ {
+  "file": "batch_170_174.json",
+  "kind": "nodes",
+  "from": 170,
+  "to": 174,
+  "count": 5,
+  "bytes": 6656
+ },
+ {
+  "file": "batch_175_179.json",
+  "kind": "nodes",
+  "from": 175,
+  "to": 179,
+  "count": 5,
+  "bytes": 5850
+ },
+ {
+  "file": "batch_180_184.json",
+  "kind": "nodes",
+  "from": 180,
+  "to": 184,
+  "count": 5,
+  "bytes": 5211
+ },
+ {
+  "file": "batch_185_189.json",
+  "kind": "nodes",
+  "from": 185,
+  "to": 189,
+  "count": 5,
+  "bytes": 4826
+ },
+ {
+  "file": "batch_190_194.json",
+  "kind": "nodes",
+  "from": 190,
+  "to": 194,
+  "count": 5,
+  "bytes": 6382
+ },
+ {
+  "file": "batch_195_199.json",
+  "kind": "nodes",
+  "from": 195,
+  "to": 199,
+  "count": 5,
+  "bytes": 7275
+ },
+ {
+  "file": "batch_200_204.json",
+  "kind": "nodes",
+  "from": 200,
+  "to": 204,
+  "count": 5,
+  "bytes": 12898
+ },
+ {
+  "file": "batch_205_209.json",
+  "kind": "nodes",
+  "from": 205,
+  "to": 209,
+  "count": 5,
+  "bytes": 6759
+ },
+ {
+  "file": "batch_210_214.json",
+  "kind": "nodes",
+  "from": 210,
+  "to": 214,
+  "count": 5,
+  "bytes": 6211
+ },
+ {
+  "file": "batch_215_219.json",
+  "kind": "nodes",
+  "from": 215,
+  "to": 219,
+  "count": 5,
+  "bytes": 4603
+ },
+ {
+  "file": "batch_220_224.json",
+  "kind": "nodes",
+  "from": 220,
+  "to": 224,
+  "count": 5,
+  "bytes": 6224
+ },
+ {
+  "file": "batch_225_229.json",
+  "kind": "nodes",
+  "from": 225,
+  "to": 229,
+  "count": 5,
+  "bytes": 6414
+ },
+ {
+  "file": "batch_230_234.json",
+  "kind": "nodes",
+  "from": 230,
+  "to": 234,
+  "count": 5,
+  "bytes": 6023
+ },
+ {
+  "file": "batch_235_239.json",
+  "kind": "nodes",
+  "from": 235,
+  "to": 239,
+  "count": 5,
+  "bytes": 5933
+ },
+ {
+  "file": "batch_240_244.json",
+  "kind": "nodes",
+  "from": 240,
+  "to": 244,
+  "count": 5,
+  "bytes": 5949
+ },
+ {
+  "file": "batch_245_249.json",
+  "kind": "nodes",
+  "from": 245,
+  "to": 249,
+  "count": 5,
+  "bytes": 7874
+ },
+ {
+  "file": "batch_250_254.json",
+  "kind": "nodes",
+  "from": 250,
+  "to": 254,
+  "count": 5,
+  "bytes": 5222
+ },
+ {
+  "file": "batch_255_259.json",
+  "kind": "nodes",
+  "from": 255,
+  "to": 259,
+  "count": 5,
+  "bytes": 7799
+ },
+ {
+  "file": "batch_260_264.json",
+  "kind": "nodes",
+  "from": 260,
+  "to": 264,
+  "count": 5,
+  "bytes": 6347
+ },
+ {
+  "file": "batch_265_269.json",
+  "kind": "nodes",
+  "from": 265,
+  "to": 269,
+  "count": 5,
+  "bytes": 5986
+ },
+ {
+  "file": "batch_270_274.json",
+  "kind": "nodes",
+  "from": 270,
+  "to": 274,
+  "count": 5,
+  "bytes": 8121
+ },
+ {
+  "file": "batch_275_279.json",
+  "kind": "nodes",
+  "from": 275,
+  "to": 279,
+  "count": 5,
+  "bytes": 6481
+ },
+ {
+  "file": "batch_280_284.json",
+  "kind": "nodes",
+  "from": 280,
+  "to": 284,
+  "count": 5,
+  "bytes": 6071
+ },
+ {
+  "file": "batch_285_289.json",
+  "kind": "nodes",
+  "from": 285,
+  "to": 289,
+  "count": 5,
+  "bytes": 7135
+ },
+ {
+  "file": "batch_290_294.json",
+  "kind": "nodes",
+  "from": 290,
+  "to": 294,
+  "count": 5,
+  "bytes": 10111
+ },
+ {
+  "file": "batch_295_299.json",
+  "kind": "nodes",
+  "from": 295,
+  "to": 299,
+  "count": 5,
+  "bytes": 7520
+ },
+ {
+  "file": "batch_300_304.json",
+  "kind": "nodes",
+  "from": 300,
+  "to": 304,
+  "count": 5,
+  "bytes": 6314
+ },
+ {
+  "file": "batch_305_309.json",
+  "kind": "nodes",
+  "from": 305,
+  "to": 309,
+  "count": 5,
+  "bytes": 6618
+ },
+ {
+  "file": "batch_310_314.json",
+  "kind": "nodes",
+  "from": 310,
+  "to": 314,
+  "count": 5,
+  "bytes": 5349
+ },
+ {
+  "file": "batch_315_319.json",
+  "kind": "nodes",
+  "from": 315,
+  "to": 319,
+  "count": 5,
+  "bytes": 5501
+ },
+ {
+  "file": "batch_320_324.json",
+  "kind": "nodes",
+  "from": 320,
+  "to": 324,
+  "count": 5,
+  "bytes": 8792
+ },
+ {
+  "file": "batch_325_329.json",
+  "kind": "nodes",
+  "from": 325,
+  "to": 329,
+  "count": 5,
+  "bytes": 4318
+ },
+ {
+  "file": "batch_330_334.json",
+  "kind": "nodes",
+  "from": 330,
+  "to": 334,
+  "count": 5,
+  "bytes": 6856
+ },
+ {
+  "file": "batch_335_339.json",
+  "kind": "nodes",
+  "from": 335,
+  "to": 339,
+  "count": 5,
+  "bytes": 6901
+ },
+ {
+  "file": "batch_340_344.json",
+  "kind": "nodes",
+  "from": 340,
+  "to": 344,
+  "count": 5,
+  "bytes": 9360
+ },
+ {
+  "file": "batch_345_349.json",
+  "kind": "nodes",
+  "from": 345,
+  "to": 349,
+  "count": 5,
+  "bytes": 8479
+ },
+ {
+  "file": "batch_350_354.json",
+  "kind": "nodes",
+  "from": 350,
+  "to": 354,
+  "count": 5,
+  "bytes": 5298
+ },
+ {
+  "file": "batch_355_359.json",
+  "kind": "nodes",
+  "from": 355,
+  "to": 359,
+  "count": 5,
+  "bytes": 8640
+ },
+ {
+  "file": "batch_360_364.json",
+  "kind": "nodes",
+  "from": 360,
+  "to": 364,
+  "count": 5,
+  "bytes": 6935
+ },
+ {
+  "file": "batch_365_369.json",
+  "kind": "nodes",
+  "from": 365,
+  "to": 369,
+  "count": 5,
+  "bytes": 6298
+ },
+ {
+  "file": "batch_370_374.json",
+  "kind": "nodes",
+  "from": 370,
+  "to": 374,
+  "count": 5,
+  "bytes": 8066
+ },
+ {
+  "file": "batch_375_379.json",
+  "kind": "nodes",
+  "from": 375,
+  "to": 379,
+  "count": 5,
+  "bytes": 6059
+ },
+ {
+  "file": "batch_380_384.json",
+  "kind": "nodes",
+  "from": 380,
+  "to": 384,
+  "count": 5,
+  "bytes": 5262
+ },
+ {
+  "file": "batch_385_389.json",
+  "kind": "nodes",
+  "from": 385,
+  "to": 389,
+  "count": 5,
+  "bytes": 5215
+ },
+ {
+  "file": "batch_390_394.json",
+  "kind": "nodes",
+  "from": 390,
+  "to": 394,
+  "count": 5,
+  "bytes": 10279
+ },
+ {
+  "file": "batch_395_399.json",
+  "kind": "nodes",
+  "from": 395,
+  "to": 399,
+  "count": 5,
+  "bytes": 6895
+ },
+ {
+  "file": "batch_400_404.json",
+  "kind": "nodes",
+  "from": 400,
+  "to": 404,
+  "count": 5,
+  "bytes": 6103
+ },
+ {
+  "file": "batch_405_409.json",
+  "kind": "nodes",
+  "from": 405,
+  "to": 409,
+  "count": 5,
+  "bytes": 4584
+ },
+ {
+  "file": "batch_410_414.json",
+  "kind": "nodes",
+  "from": 410,
+  "to": 414,
+  "count": 5,
+  "bytes": 6331
+ },
+ {
+  "file": "batch_415_419.json",
+  "kind": "nodes",
+  "from": 415,
+  "to": 419,
+  "count": 5,
+  "bytes": 7059
+ },
+ {
+  "file": "batch_420_424.json",
+  "kind": "nodes",
+  "from": 420,
+  "to": 424,
+  "count": 5,
+  "bytes": 6404
+ },
+ {
+  "file": "batch_425_429.json",
+  "kind": "nodes",
+  "from": 425,
+  "to": 429,
+  "count": 5,
+  "bytes": 5348
+ },
+ {
+  "file": "batch_430_434.json",
+  "kind": "nodes",
+  "from": 430,
+  "to": 434,
+  "count": 5,
+  "bytes": 10720
+ },
+ {
+  "file": "batch_435_439.json",
+  "kind": "nodes",
+  "from": 435,
+  "to": 439,
+  "count": 5,
+  "bytes": 7746
+ },
+ {
+  "file": "batch_440_444.json",
+  "kind": "nodes",
+  "from": 440,
+  "to": 444,
+  "count": 5,
+  "bytes": 6467
+ },
+ {
+  "file": "batch_445_449.json",
+  "kind": "nodes",
+  "from": 445,
+  "to": 449,
+  "count": 5,
+  "bytes": 8577
+ },
+ {
+  "file": "batch_450_454.json",
+  "kind": "nodes",
+  "from": 450,
+  "to": 454,
+  "count": 5,
+  "bytes": 5771
+ },
+ {
+  "file": "batch_455_459.json",
+  "kind": "nodes",
+  "from": 455,
+  "to": 459,
+  "count": 5,
+  "bytes": 7652
+ },
+ {
+  "file": "batch_460_464.json",
+  "kind": "nodes",
+  "from": 460,
+  "to": 464,
+  "count": 5,
+  "bytes": 7896
+ },
+ {
+  "file": "batch_465_469.json",
+  "kind": "nodes",
+  "from": 465,
+  "to": 469,
+  "count": 5,
+  "bytes": 5822
+ },
+ {
+  "file": "batch_470_474.json",
+  "kind": "nodes",
+  "from": 470,
+  "to": 474,
+  "count": 5,
+  "bytes": 5159
+ },
+ {
+  "file": "batch_475_479.json",
+  "kind": "nodes",
+  "from": 475,
+  "to": 479,
+  "count": 5,
+  "bytes": 4988
+ },
+ {
+  "file": "batch_480_484.json",
+  "kind": "nodes",
+  "from": 480,
+  "to": 484,
+  "count": 5,
+  "bytes": 8679
+ },
+ {
+  "file": "batch_485_489.json",
+  "kind": "nodes",
+  "from": 485,
+  "to": 489,
+  "count": 5,
+  "bytes": 6729
+ },
+ {
+  "file": "batch_490_494.json",
+  "kind": "nodes",
+  "from": 490,
+  "to": 494,
+  "count": 5,
+  "bytes": 5929
+ },
+ {
+  "file": "batch_495_499.json",
+  "kind": "nodes",
+  "from": 495,
+  "to": 499,
+  "count": 5,
+  "bytes": 11856
+ },
+ {
+  "file": "batch_500_504.json",
+  "kind": "nodes",
+  "from": 500,
+  "to": 504,
+  "count": 5,
+  "bytes": 5710
+ },
+ {
+  "file": "batch_505_509.json",
+  "kind": "nodes",
+  "from": 505,
+  "to": 509,
+  "count": 5,
+  "bytes": 6683
+ },
+ {
+  "file": "batch_510_514.json",
+  "kind": "nodes",
+  "from": 510,
+  "to": 514,
+  "count": 5,
+  "bytes": 4338
+ },
+ {
+  "file": "batch_515_519.json",
+  "kind": "nodes",
+  "from": 515,
+  "to": 519,
+  "count": 5,
+  "bytes": 6117
+ },
+ {
+  "file": "batch_520_524.json",
+  "kind": "nodes",
+  "from": 520,
+  "to": 524,
+  "count": 5,
+  "bytes": 5179
+ },
+ {
+  "file": "batch_525_529.json",
+  "kind": "nodes",
+  "from": 525,
+  "to": 529,
+  "count": 5,
+  "bytes": 7824
+ },
+ {
+  "file": "batch_530_534.json",
+  "kind": "nodes",
+  "from": 530,
+  "to": 534,
+  "count": 5,
+  "bytes": 14457
+ },
+ {
+  "file": "batch_535_539.json",
+  "kind": "nodes",
+  "from": 535,
+  "to": 539,
+  "count": 5,
+  "bytes": 6610
+ },
+ {
+  "file": "batch_540_544.json",
+  "kind": "nodes",
+  "from": 540,
+  "to": 544,
+  "count": 5,
+  "bytes": 5629
+ },
+ {
+  "file": "batch_545_549.json",
+  "kind": "nodes",
+  "from": 545,
+  "to": 549,
+  "count": 5,
+  "bytes": 6851
+ },
+ {
+  "file": "batch_550_554.json",
+  "kind": "nodes",
+  "from": 550,
+  "to": 554,
+  "count": 5,
+  "bytes": 8892
+ },
+ {
+  "file": "squares.json",
+  "kind": "squares",
+  "from": null,
+  "to": null,
+  "count": 24,
+  "bytes": 27051
+ }
+]

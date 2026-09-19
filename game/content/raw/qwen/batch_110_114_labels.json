@@ -1,0 +1,13 @@
+{
+  "labels": [
+    { "id": 110, "i": 0, "t": "CHOICE", "target": 443, "label": "Взобраться на вершину" },
+    { "id": 111, "i": 0, "t": "NAR" },
+    { "id": 111, "i": 1, "t": "CHOICE", "target": 156, "label": "В дом здоровяка" },
+    { "id": 111, "i": 2, "t": "CHOICE", "target": 306, "label": "Выбрать нору" },
+    { "id": 111, "i": 3, "t": "CHOICE", "target": 305, "label": "Пройти мимо" },
+    { "id": 112, "i": 0, "t": "CHOICE", "target": 521, "label": "Упасть на землю" },
+    { "id": 113, "i": 0, "t": "SQUARE", "square": "2В" },
+    { "id": 113, "i": 1, "t": "FORWARD" },
+    { "id": 114, "i": 0, "t": "CHOICE", "target": 213, "label": "Войти в пещерку" }
+  ]
+}
