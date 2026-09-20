@@ -9,6 +9,7 @@ import { useStore, useAppSnapshot } from '../../app/hooks.ts';
 import { PREFACE, PROLOGUE, PROLOGUE_CHOICES } from '../../content/prologue.ts';
 import { splitIntoPages } from '../reading.ts';
 import { Button, SceneText, SkillsList } from '../components.tsx';
+import { Splash3D } from '../components/Title3D.tsx';
 import {
   MAX_SKILL, TOTAL_LEVELS, UNTRAINED_SKILL,
   createCustomHero, createReadyHero, validateDistribution,
@@ -17,14 +18,7 @@ import {
 import { SKILL_NAMES, SKILLS, type SkillId } from '../../engine/types.ts';
 
 export function SplashScreen(): JSX.Element {
-  const store = useStore();
-  return (
-    <main class="screen screen--splash" onClick={() => store.go('menu')}>
-      <h1 class="splash__title">Колдунья и Книга заклинаний</h1>
-      <p class="splash__subtitle">Игра-книга по Нарнии</p>
-      <p class="splash__hint">Коснись экрана</p>
-    </main>
-  );
+  return <Splash3D />;
 }
 
 export function MenuScreen(): JSX.Element {

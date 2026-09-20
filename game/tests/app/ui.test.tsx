@@ -62,9 +62,9 @@ describe('интерфейс', () => {
 
   it('показывает сплэш и уходит в меню по касанию', async () => {
     expect(root.textContent).toContain('Колдунья и Книга заклинаний');
-    expect(root.textContent).toContain('Коснись экрана');
+    expect(root.textContent).toContain('Коснитесь экрана');
 
-    root.querySelector('.screen--splash')!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+    root.querySelector('.screen--title')!.dispatchEvent(new MouseEvent('click', { bubbles: true }));
     await tick();
     expect(root.textContent).toContain('Новая игра');
   });

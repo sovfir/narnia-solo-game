@@ -8,6 +8,11 @@ declare global {
       screenPositionOf: (id: string) => { x: number; y: number } | null;
       resetCamera: () => void;
     };
+    __NARNIA_TITLE__?: {
+      stats: () => { calls: number; triangles: number; fps: number };
+      objectCount: () => number;
+      screenPositionOf: (name: string) => { x: number; y: number } | null;
+    };
   }
 }
 
@@ -42,10 +47,10 @@ test('игра запускается, играет и продолжает па
   });
 
   await page.goto('./');
-  await expect(page.getByText('Коснись экрана')).toBeVisible({ timeout: 15_000 });
+  await expect(page.getByText('Коснитесь экрана')).toBeVisible({ timeout: 15_000 });
   await page.screenshot({ path: 'test-results/01-splash.png' });
 
-  await page.locator('.screen--splash').click();
+  await page.locator('.screen--title').click();
   await expect(page.getByRole('button', { name: 'Новая игра' })).toBeVisible();
 
   await page.getByRole('button', { name: 'Новая игра' }).click();
@@ -152,8 +157,8 @@ test('длинная сцена читается постранично', async 
 
 test('экран «О Нарнии» читается из меню', async ({ page }) => {
   await page.goto('./');
-  await expect(page.getByText('Коснись экрана')).toBeVisible({ timeout: 20_000 });
-  await page.locator('.screen--splash').click();        // сплэш → меню
+  await expect(page.getByText('Коснитесь экрана')).toBeVisible({ timeout: 20_000 });
+  await page.locator('.screen--title').click();        // сплэш → меню
   await page.getByRole('button', { name: 'О Нарнии' }).click();
   await expect(page.getByRole('button', { name: 'Основание Нарнии' })).toBeVisible();
   await page.getByRole('button', { name: 'Основание Нарнии' }).click();
@@ -199,5 +204,46 @@ test('карта в 3D: герой виден, доска целиком в ка
   await page.waitForTimeout(500);
   await expect(page.locator('.scene__node')).not.toHaveText('Событие 292');
 
+  expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
+});
+
+test('заглавный экран: сцена, подписи и переход в меню', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(String(error)));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+
+  await page.goto('./');
+  await expect(page.getByText('Колдунья и Книга заклинаний')).toBeVisible();
+  await expect(page.getByText('Анна Шрафф')).toBeVisible();
+  await expect(page.getByText('перевод: Смелый Хвост')).toBeVisible();
+  await expect(page.getByText('Коснитесь экрана')).toBeVisible();
+
+  await page.waitForFunction(() => Boolean(window.__NARNIA_TITLE__), null, { timeout: 25_000 });
+  await page.waitForTimeout(700);
+
+  const scene = await page.evaluate(() => {
+    const title = window.__NARNIA_TITLE__!;
+    return {
+      stats: title.stats(),
+      objects: title.objectCount(),
+      frame: {
+        left: title.screenPositionOf('leftFrame'),
+        right: title.screenPositionOf('rightFrame'),
+        top: title.screenPositionOf('canopyTop'),
+      },
+    };
+  });
+
+  // композиция: стволы-рама по краям кадра, крона сверху — всё внутри кадра
+  expect(scene.objects, 'сцена не должна быть пустой').toBeGreaterThan(20);
+  expect(scene.frame.left!.x, 'левый ствол у левого края').toBeLessThan(-0.7);
+  expect(scene.frame.right!.x, 'правый ствол у правого края').toBeGreaterThan(0.7);
+  expect(Math.abs(scene.frame.top!.y), 'крона должна быть в кадре').toBeLessThan(1.15);
+  expect(scene.stats.calls, 'разумный бюджет вызовов').toBeLessThanOrEqual(45);
+  expect(scene.stats.fps, 'сцена должна анимироваться').toBeGreaterThanOrEqual(20);
+
+  await page.screenshot({ path: 'test-results/12-title.png' });
+  await page.locator('.screen--title').click();
+  await expect(page.getByRole('button', { name: 'Новая игра' })).toBeVisible();
   expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
 });
