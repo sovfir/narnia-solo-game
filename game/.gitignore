@@ -8,3 +8,8 @@ coverage/
 
 # система
 .DS_Store
+
+# браузеры Playwright (скачиваются локально)
+.playwright-browsers/
+test-results/
+playwright-report/

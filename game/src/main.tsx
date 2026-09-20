@@ -23,6 +23,8 @@ async function boot(): Promise<void> {
   const content = await loadBrowserContent();
   const store = createStore({ content });
 
+  root!.replaceChildren();          // убираем заглушку «Загрузка…», иначе она останется в DOM
+
   render(
     <StoreContext.Provider value={store}>
       <App />
