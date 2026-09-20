@@ -1,8 +1,11 @@
 /**
- * Состояние приложения: движок + экраны + автосохранение.
+ * Состояние приложения: движок + экраны + сохранения.
  *
- * Хранилище намеренно маленькое и без внешних зависимостей: один объект,
- * подписка для Preact и запись в localStorage после каждого действия.
+ * Хранилище маленькое и без внешних зависимостей: один объект, подписка для Preact
+ * (через useSyncExternalStore) и запись в localStorage после каждого действия.
+ *
+ * Сохранения (§8.6): автослот + три ручных слота, короткая контрольная сумма,
+ * версия контента и миграции по номеру версии.
  */
 
 import { createEngine, type Engine, type GameState } from '../engine/engine.ts';
@@ -10,14 +13,48 @@ import { createReadyHero, type Hero } from '../engine/hero.ts';
 import type { Content, SquareId } from '../engine/types.ts';
 
 export type Screen =
-  | 'splash' | 'menu' | 'hero' | 'prologue' | 'game' | 'sheet' | 'journal' | 'ending' | 'gallery';
+  | 'splash' | 'menu' | 'hero' | 'prologue' | 'game' | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves';
+
+export type SaveSlot = 'auto' | 'slot1' | 'slot2' | 'slot3';
+
+export const SAVE_SLOTS: readonly SaveSlot[] = ['auto', 'slot1', 'slot2', 'slot3'];
+
+export const SLOT_LABELS: Record<SaveSlot, string> = {
+  auto: 'Автосохранение',
+  slot1: 'Слот 1',
+  slot2: 'Слот 2',
+  slot3: 'Слот 3',
+};
+
+/** Автослот исторически лежит под этим ключом — менять нельзя, иначе потеряются партии. */
+export const SAVE_KEY = 'narnia.save.v1';
+export const GALLERY_KEY = 'narnia.gallery.v1';
+export const SAVE_VERSION = 1;
+
+export function slotKey(slot: SaveSlot): string {
+  return slot === 'auto' ? SAVE_KEY : `${SAVE_KEY}.${slot}`;
+}
 
 export interface SaveFile {
-  version: 1;
+  version: number;
   contentVersion: string;
   savedAt: number;
+  /** Короткая свёртка состояния: ловит испорченный JSON. */
+  checksum: string;
   state: GameState;
   screen: Screen;
+}
+
+export interface SaveInfo {
+  slot: SaveSlot;
+  label: string;
+  savedAt: number;
+  heroName: string;
+  node: number;
+  square: SquareId | null;
+  marks: number;
+  ending: GameState['ending'];
+  broken: boolean;
 }
 
 export interface StorageLike {
@@ -35,12 +72,11 @@ export interface AppSnapshot {
   hasSave: boolean;
   /** Достигнутые финалы (номера узлов) за все партии — для галереи S7. */
   gallery: number[];
+  /** Сохранения по слотам — для экрана «Сохранения». */
+  saves: SaveInfo[];
 }
 
 export type Listener = (snapshot: AppSnapshot) => void;
-
-export const SAVE_KEY = 'narnia.save.v1';
-export const GALLERY_KEY = 'narnia.gallery.v1';
 
 export interface StoreOptions {
   content: Content;
@@ -67,13 +103,46 @@ export interface AppStore {
   rollback(): void;
   restart(): void;
   continueSaved(): boolean;
+  /** Дозаписать текущую партию в слот (ручное сохранение). */
+  saveTo(slot: SaveSlot): boolean;
+  /** Загрузить партию из слота. */
+  loadFrom(slot: SaveSlot): boolean;
+  deleteSlot(slot: SaveSlot): void;
+  listSaves(): SaveInfo[];
+  /** Сохранение в виде JSON-строки для экспорта. */
+  exportCurrent(): string;
+  /** Импорт партии из JSON; возвращает причину отказа или null при успехе. */
+  importSave(text: string): string | null;
   clearSave(): void;
+}
+
+/** Короткая свёртка строки (FNV-1a) — используется и для версии контента, и для состояния. */
+export function shortHash(text: string): string {
+  let hash = 0x811c9dc5;
+  for (let i = 0; i < text.length; i += 1) {
+    hash ^= text.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  return hash.toString(16).padStart(8, '0');
+}
+
+/** Миграции сохранений по версии: ключ — версия, из которой переходим. */
+export const MIGRATIONS: Record<number, (save: SaveFile) => SaveFile> = {
+  // 1 → 2: когда схема изменится, здесь появится преобразование
+};
+
+function migrate(save: SaveFile): SaveFile {
+  let current = save;
+  while (current.version < SAVE_VERSION && MIGRATIONS[current.version]) {
+    current = MIGRATIONS[current.version]!(current);
+  }
+  return current;
 }
 
 function isSaveFile(value: unknown): value is SaveFile {
   if (!value || typeof value !== 'object') return false;
   const save = value as Partial<SaveFile>;
-  return save.version === 1 && typeof save.state === 'object' && typeof save.screen === 'string';
+  return typeof save.version === 'number' && typeof save.state === 'object' && save.state !== null;
 }
 
 export function createStore(options: StoreOptions): AppStore {
@@ -83,7 +152,10 @@ export function createStore(options: StoreOptions): AppStore {
     : options.storage;
   const rng = options.rng ?? (() => Math.random());
   const now = options.now ?? (() => Date.now());
-  const engine = createEngine(content, { now, ...(options.startNode !== undefined ? { startNode: options.startNode } : {}) });
+  const engine = createEngine(content, {
+    now,
+    ...(options.startNode !== undefined ? { startNode: options.startNode } : {}),
+  });
 
   let gallery: number[] = [];
   try {
@@ -98,51 +170,83 @@ export function createStore(options: StoreOptions): AppStore {
   let screen: Screen = 'splash';
   let mapOpen = false;
 
-  // Снимок кешируется: useSyncExternalStore требует стабильную ссылку,
-  // пока состояние не изменилось.
-  let current: AppSnapshot = {
-    screen,
-    state,
-    mapOpen,
-    hasSave: storage?.getItem(SAVE_KEY) !== null,
-    gallery,
-  };
+  function readSlot(slot: SaveSlot): { save: SaveFile | null; broken: boolean } {
+    const raw = storage?.getItem(slotKey(slot));
+    if (!raw) return { save: null, broken: false };
+    try {
+      const parsed: unknown = JSON.parse(raw);
+      if (!isSaveFile(parsed)) return { save: null, broken: true };
+      const migrated = migrate(parsed);
+      const expected = shortHash(JSON.stringify(migrated.state));
+      if (migrated.checksum && migrated.checksum !== expected) return { save: null, broken: true };
+      return { save: migrated, broken: false };
+    } catch {
+      return { save: null, broken: true };
+    }
+  }
 
-  function refresh(): void {
-    current = {
+  function listSaves(): SaveInfo[] {
+    return SAVE_SLOTS.map((slot) => {
+      const { save, broken } = readSlot(slot);
+      return {
+        slot,
+        label: SLOT_LABELS[slot],
+        savedAt: save?.savedAt ?? 0,
+        heroName: save?.state.hero?.name ?? '',
+        node: save?.state.node ?? 0,
+        square: save?.state.square ?? null,
+        marks: save?.state.marks?.length ?? 0,
+        ending: save?.state.ending ?? null,
+        broken,
+      };
+    });
+  }
+
+  let current: AppSnapshot = buildSnapshot();
+
+  function buildSnapshot(): AppSnapshot {
+    return {
       screen,
       state,
       mapOpen,
       hasSave: storage?.getItem(SAVE_KEY) !== null,
       gallery,
+      saves: listSaves(),
     };
   }
 
   function emit(): void {
-    persist();               // сначала запись: она может пополнить галерею финалов
-    refresh();
+    persist();                 // сначала запись: она может пополнить галерею финалов
+    current = buildSnapshot();
     for (const listener of listeners) listener(current);
   }
 
-  function persist(): void {
-    if (!storage) return;
-    if (!state) return;
+  function writeSlot(slot: SaveSlot, snapshotState: GameState, targetScreen: Screen): boolean {
+    if (!storage) return false;
+    const trimmed: GameState = { ...snapshotState, history: snapshotState.history.slice(-40) };
     const save: SaveFile = {
-      version: 1,
+      version: SAVE_VERSION,
       contentVersion: content.version,
       savedAt: now(),
-      state: { ...state, history: state.history.slice(-40) },
-      screen: state.finished ? 'ending' : screen,
+      checksum: shortHash(JSON.stringify(trimmed)),
+      state: trimmed,
+      screen: trimmed.finished ? 'ending' : targetScreen,
     };
     try {
-      storage.setItem(SAVE_KEY, JSON.stringify(save));
+      storage.setItem(slotKey(slot), JSON.stringify(save));
+      return true;
     } catch {
-      // переполнение хранилища не должно ломать игру
+      return false;                       // переполнение хранилища не должно ломать игру
     }
+  }
+
+  function persist(): void {
+    if (!state) return;
+    writeSlot('auto', state, screen);
     if (state.finished && state.ending && !gallery.includes(state.node)) {
       gallery = [...gallery, state.node];
       try {
-        storage.setItem(GALLERY_KEY, JSON.stringify(gallery));
+        storage?.setItem(GALLERY_KEY, JSON.stringify(gallery));
       } catch {
         /* см. выше */
       }
@@ -161,6 +265,7 @@ export function createStore(options: StoreOptions): AppStore {
     engine,
     content,
     getSnapshot: () => current,
+    listSaves,
     subscribe(listener) {
       listeners.add(listener);
       return () => listeners.delete(listener);
@@ -216,30 +321,72 @@ export function createStore(options: StoreOptions): AppStore {
       state = null;
       screen = 'menu';
       mapOpen = false;
-      storage?.removeItem(SAVE_KEY);
+      storage?.removeItem(slotKey('auto'));
       emit();
     },
 
     continueSaved() {
-      if (!storage) return false;
-      const raw = storage.getItem(SAVE_KEY);
-      if (!raw) return false;
+      return store.loadFrom('auto');
+    },
+
+    saveTo(slot) {
+      if (!state) return false;
+      const ok = writeSlot(slot, state, screen);
+      emit();
+      return ok;
+    },
+
+    loadFrom(slot) {
+      const { save } = readSlot(slot);
+      if (!save) return false;
+      if (save.contentVersion !== content.version) return false;
+      state = save.state;
+      screen = save.state.finished ? 'ending' : (save.screen === 'splash' ? 'game' : save.screen);
+      mapOpen = false;
+      emit();
+      return true;
+    },
+
+    deleteSlot(slot) {
+      storage?.removeItem(slotKey(slot));
+      emit();
+    },
+
+    exportCurrent() {
+      if (!state) return '';
+      const save: SaveFile = {
+        version: SAVE_VERSION,
+        contentVersion: content.version,
+        savedAt: now(),
+        checksum: shortHash(JSON.stringify(state)),
+        state,
+        screen: state.finished ? 'ending' : screen,
+      };
+      return JSON.stringify(save, null, 1);
+    },
+
+    importSave(text) {
+      let parsed: unknown;
       try {
-        const parsed: unknown = JSON.parse(raw);
-        if (!isSaveFile(parsed)) return false;
-        if (parsed.contentVersion !== content.version) return false;
-        state = parsed.state;
-        screen = parsed.state.finished ? 'ending' : parsed.screen === 'splash' ? 'game' : parsed.screen;
-        mapOpen = false;
-        emit();
-        return true;
+        parsed = JSON.parse(text);
       } catch {
-        return false;
+        return 'не удалось разобрать JSON';
       }
+      if (!isSaveFile(parsed)) return 'это не файл сохранения';
+      const save = migrate(parsed);
+      if (save.checksum && save.checksum !== shortHash(JSON.stringify(save.state))) {
+        return 'контрольная сумма не совпала — файл повреждён';
+      }
+      if (!content.nodes.has(save.state.node)) return 'сохранение от другого контента';
+      state = save.state;
+      screen = save.state.finished ? 'ending' : 'game';
+      mapOpen = false;
+      emit();
+      return null;
     },
 
     clearSave() {
-      storage?.removeItem(SAVE_KEY);
+      storage?.removeItem(slotKey('auto'));
       emit();
     },
   };

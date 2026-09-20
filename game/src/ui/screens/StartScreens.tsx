@@ -33,6 +33,7 @@ export function MenuScreen(): JSX.Element {
         {hasSave && <Button kind="primary" onClick={() => store.continueSaved()}>Продолжить</Button>}
         <Button kind={hasSave ? 'ghost' : 'primary'} onClick={() => store.go('hero')}>Новая игра</Button>
         <Button onClick={() => store.go('prologue')}>Как играть</Button>
+        <Button onClick={() => store.go('saves')}>Сохранения</Button>
         <Button onClick={() => store.go('gallery')}>Галерея концовок</Button>
       </div>
       <p class="menu__note">

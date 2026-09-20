@@ -6,6 +6,13 @@ import { App } from './ui/App.tsx';
 import { loadBrowserContent } from './content/browser.ts';
 import './ui/styles.css';
 
+// Регистрация service worker'а: офлайн-режим и установка на домашний экран (§9).
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  void import('virtual:pwa-register').then(({ registerSW }) => {
+    registerSW({ immediate: true });
+  });
+}
+
 const root = document.getElementById('app');
 if (!root) throw new Error('не найден #app');
 
