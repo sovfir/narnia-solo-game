@@ -196,7 +196,7 @@ export function createEngine(content: Content, options: EngineOptions = {}): Eng
         if (!choice) {
           throw new Error(`узел ${state.node}: варианта ${action.index} не существует`);
         }
-        if (!checksPass(state.marks, choice.checks)) {
+        if (!checksPass(state.marks, choice.checks, choice.mode ?? 'all')) {
           throw new Error(`узел ${state.node}: вариант ${action.index} недоступен (нет отметок ${choice.checks.join(', ')})`);
         }
         const applied = applyEffects(

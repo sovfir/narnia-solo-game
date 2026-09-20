@@ -71,6 +71,8 @@ def build_node(rep: dict) -> dict:
             "target": s["target"],
             "condition": s.get("cond"),
             "checks": s.get("checks", []),
+            # «проверь ключ 6, 19, 22 или 23» — любой из ключей, а не все
+            "mode": s.get("check_mode", "all"),
             "line_i": s["line_i"],
             "source": s["text"],
             "label": None,          # заполнит QWEN

@@ -35,9 +35,9 @@ export function checksPass(
  * Правило интерфейса (§10.2): недоступные варианты не показываем вовсе —
  * название кнопки не должно раскрывать скрытое требование.
  */
-export function availableChoices<T extends { checks: number[] }>(
+export function availableChoices<T extends { checks: number[]; mode?: 'all' | 'any' }>(
   choices: readonly T[],
   marks: readonly number[],
 ): T[] {
-  return choices.filter((c) => checksPass(marks, c.checks));
+  return choices.filter((c) => checksPass(marks, c.checks, c.mode ?? 'all'));
 }

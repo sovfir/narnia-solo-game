@@ -5,10 +5,10 @@
  * командой `npm run golden:gen`. Тест проигрывает каждый путь движком
  * и проверяет, что партия заканчивается именно тем финалом.
  *
- * Известный пробел: финал 243 («Карга не даёт выбрать другой ключ») требует
- * собрать все четыре ключа (отметки 6, 19, 22, 23) и пройти цепочку
- * 256 → 468 → 509 → 412 → бросок 2-5 на Красноречие. Маршрут прослежен,
- * но автоматический поиск его пока не находит — см. HANDOFF.md.
+ * История: финал 243 долго не находился, потому что кнопка узла 256
+ * («проверь ключ 6, 19, 22 или 23») требует ЛЮБОЙ из ключей, а движок
+ * требовал все четыре. Режим проверки (`mode`) теперь приходит из разбора
+ * и доходит до движка — см. условия в content/sentence_parse.json.
  */
 
 import { readFileSync } from 'node:fs';
@@ -38,7 +38,7 @@ describe('золотые пути', () => {
   it('фикстура собрана для этого контента', () => {
     const fresh = parseContent({ nodes: loadRawNodes(), squares: loadRawSquares() });
     expect(fixture.endings).toBe(15);
-    expect(fixture.paths.length).toBeGreaterThanOrEqual(14);
+    expect(fixture.paths.length).toBe(15);
     // если контент пересобрали, фикстуру надо обновить: npm run golden:gen
     expect(fresh.nodes.size).toBe(content.nodes.size);
   });
@@ -59,10 +59,11 @@ describe('золотые пути', () => {
     expect(kinds.filter((kind) => kind === 'death').length).toBeGreaterThanOrEqual(11);
   });
 
-  it('остался один непокрытый финал — 243, он задокументирован', () => {
+  it('покрыты все 15 финалов', () => {
     const covered = new Set(fixture.paths.map((path) => path.ending));
     const missing = allEndings.filter((id) => !covered.has(id));
-    expect(missing).toEqual([243]);
+    expect(missing).toEqual([]);
+    expect(covered.size).toBe(15);
   });
 
   it('пути воспроизводятся одним и тем же движком дважды (детерминизм)', () => {
