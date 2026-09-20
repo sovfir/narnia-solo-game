@@ -15,8 +15,10 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 
+import { PostFx, type Quality } from './postfx.ts';
+
 import {
-  barkTexture, clothTexture, disposeTextures, foliageTexture, grassTexture,
+  barkTexture, clothTexture, disposeTextures, foliageTexture, furTexture, grassTexture,
   grainTexture, leafTexture, mistTexture, shaftTexture,
 } from './textures.ts';
 
@@ -28,12 +30,12 @@ export interface TitleStats {
 
 const PALETTE = {
   sky: 0xbfe4e2,
-  fog: 0x9fd2cc,
-  bark: 0xffffff,
+  fog: 0x7fb6b8,
+  bark: 0xffe8d0,
   barkFar: 0x9fc4cc,
   foliage: 0xeef4e2,
   foliageFar: 0xdcecea,
-  grass: 0xdfe6cf,
+  grass: 0xe6f0d2,
   lionBody: 0xf2bb63,
   lionBodyDark: 0xd79a3f,
   lionMane: 0xd07f28,
@@ -103,7 +105,7 @@ function buildTrunk(height: number, radius: number, material: THREE.Material): T
     const wobble = 1 + Math.sin(t * Math.PI * 3) * 0.035;      // живая неровность
     profile.push(new THREE.Vector2(radius * taper * flare * wobble, t * height));
   }
-  const geometry = new THREE.LatheGeometry(profile, 20);
+  const geometry = new THREE.LatheGeometry(profile, 32);
   geometry.computeVertexNormals();
   return new THREE.Mesh(geometry, material);
 }
@@ -121,7 +123,7 @@ function buildCanopy(radius: number, material: THREE.Material, seed: number): TH
     const distance = random() * radius * 0.55;
     const size = radius * (0.42 + random() * 0.3);
     pieces.push({
-      geometry: new THREE.SphereGeometry(size, 9, 6),
+      geometry: new THREE.SphereGeometry(size, 12, 9),
       position: [Math.cos(angle) * distance, (random() - 0.35) * radius * 0.45, Math.sin(angle) * distance],
       scale: [1.05, 0.85 + random() * 0.25, 1.05],
     });
@@ -144,8 +146,8 @@ function buildLion(): {
   const group = new THREE.Group();
   const bodyMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionBody, roughness: 0.9, metalness: 0 });
   const bodyDarkMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionBodyDark, roughness: 0.92, metalness: 0 });
-  const maneMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionMane, roughness: 0.95, metalness: 0, flatShading: true });
-  const maneLightMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionManeLight, roughness: 0.95, metalness: 0, flatShading: true });
+  const maneMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionMane, roughness: 0.98, metalness: 0, bumpMap: furTexture(), bumpScale: 0.06 });
+  const maneLightMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionManeLight, roughness: 0.98, metalness: 0, bumpMap: furTexture(), bumpScale: 0.05 });
   const muzzleMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.muzzle, roughness: 0.85, metalness: 0 });
   const faceMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.face, roughness: 0.45, metalness: 0 });
 
@@ -153,8 +155,8 @@ function buildLion(): {
   group.add(new THREE.Mesh(mergePieces([
     { geometry: new THREE.IcosahedronGeometry(0.42, 0), position: [-0.36, 0.42, -0.34], scale: [1, 0.95, 1.15] },
     { geometry: new THREE.IcosahedronGeometry(0.42, 0), position: [0.36, 0.42, -0.34], scale: [1, 0.95, 1.15] },
-    { geometry: new THREE.SphereGeometry(0.44, 16, 12), position: [0, 1.04, -0.12], scale: [1.05, 1.35, 0.95] },
-    { geometry: new THREE.SphereGeometry(0.44, 16, 12), position: [0, 0.9, -0.58], scale: [1, 0.92, 1.05] },
+    { geometry: new THREE.SphereGeometry(0.44, 26, 20), position: [0, 1.04, -0.12], scale: [1.05, 1.35, 0.95] },
+    { geometry: new THREE.SphereGeometry(0.44, 26, 20), position: [0, 0.9, -0.58], scale: [1, 0.92, 1.05] },
     { geometry: new THREE.SphereGeometry(0.28, 14, 11), position: [0, 1.46, 0.04], scale: [1.05, 0.9, 1] },
   ]), bodyMaterial));
 
@@ -175,7 +177,7 @@ function buildLion(): {
   group.add(new THREE.Mesh(mergePieces(legs), bodyMaterial));
   group.add(new THREE.Mesh(mergePieces(paws), bodyDarkMaterial));
 
-  const chest = new THREE.Mesh(new THREE.SphereGeometry(0.44, 16, 12), bodyMaterial);
+  const chest = new THREE.Mesh(new THREE.SphereGeometry(0.44, 26, 20), bodyMaterial);
   chest.position.set(0, 1.0, 0.16);
   chest.scale.set(1.0, 1.15, 0.95);
   group.add(chest);
@@ -185,8 +187,8 @@ function buildLion(): {
   head.position.set(0, 1.78, 0.14);
 
   head.add(new THREE.Mesh(mergePieces([
-    { geometry: new THREE.SphereGeometry(0.29, 18, 14), scale: [1.0, 0.96, 1.06] },
-    { geometry: new THREE.CylinderGeometry(0.09, 0.19, 0.36, 8), position: [0, -0.13, 0.3], rotation: [Math.PI / 2, 0, 0], scale: [0.86, 1, 1] },
+    { geometry: new THREE.SphereGeometry(0.29, 26, 20), scale: [1.0, 0.96, 1.06] },
+    { geometry: new THREE.CylinderGeometry(0.09, 0.19, 0.36, 16), position: [0, -0.13, 0.3], rotation: [Math.PI / 2, 0, 0], scale: [0.86, 1, 1] },
     { geometry: new THREE.SphereGeometry(0.09, 10, 8), position: [0, -0.25, 0.3], scale: [1.2, 0.9, 1] },
     { geometry: new THREE.BoxGeometry(0.34, 0.05, 0.14), position: [0, 0.12, 0.24] },
   ]), bodyMaterial));
@@ -212,7 +214,7 @@ function buildLion(): {
 
   // Грива: гранёная объёмная «шапка» + V-выступ на груди (никаких шипов)
   const maneDark: Piece[] = [
-    { geometry: new THREE.IcosahedronGeometry(0.66, 0), position: [0, -0.06, -0.18], scale: [1.18, 1.22, 0.6] },
+    { geometry: new THREE.IcosahedronGeometry(0.66, 1), position: [0, -0.06, -0.18], scale: [1.18, 1.22, 0.6] },
     // боковые пряди выходят вперёд и обрамляют морду
     { geometry: new THREE.IcosahedronGeometry(0.3, 0), position: [-0.42, 0.06, 0.06], scale: [0.95, 1.15, 0.6], rotation: [0, 0, 0.5] },
     { geometry: new THREE.IcosahedronGeometry(0.3, 0), position: [0.42, 0.06, 0.06], scale: [0.95, 1.15, 0.6], rotation: [0, 0, -0.5] },
@@ -283,7 +285,7 @@ function buildTraveler(): { group: THREE.Group; cloak: THREE.Mesh; basePositions
     const radius = 0.16 + Math.pow(t, 1.5) * 0.3 + Math.sin(t * Math.PI) * 0.05;
     profile.push(new THREE.Vector2(radius, 1.02 - t * 1.0));
   }
-  const cloakGeometry = new THREE.LatheGeometry(profile, 22);
+  const cloakGeometry = new THREE.LatheGeometry(profile, 32);
   cloakGeometry.computeVertexNormals();
   const cloak = new THREE.Mesh(cloakGeometry, material);
   group.add(cloak);
@@ -333,8 +335,24 @@ function buildLeaves(count: number): { mesh: THREE.InstancedMesh; state: Float32
   return { mesh, state };
 }
 
+function detectQuality(): Quality {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const forced = params.get('fx');
+    if (forced === 'low' || forced === 'medium' || forced === 'high') return forced;
+  } catch {
+    /* не в браузере — берём эвристику */
+  }
+  const coarse = typeof window.matchMedia === 'function' && window.matchMedia('(pointer: coarse)').matches;
+  const cores = navigator.hardwareConcurrency ?? 4;
+  if (!coarse && cores >= 4) return 'high';
+  if (cores >= 4) return 'medium';
+  return 'low';
+}
+
 export class TitleScene {
   private readonly renderer: THREE.WebGLRenderer;
+  private readonly postfx: PostFx;
   private readonly scene = new THREE.Scene();
   private readonly camera: THREE.PerspectiveCamera;
   private readonly clock = new THREE.Clock();
@@ -359,7 +377,7 @@ export class TitleScene {
     this.renderer.toneMappingExposure = 1.12;
 
     this.scene.background = new THREE.Color(PALETTE.sky);
-    this.scene.fog = new THREE.Fog(PALETTE.fog, 7, 26);
+    this.scene.fog = new THREE.Fog(PALETTE.fog, 6, 22);
 
     this.camera = new THREE.PerspectiveCamera(FOV, 2 / 3, 0.1, 90);
     this.camera.position.set(0, CAMERA_HEIGHT, 7.4);
@@ -368,8 +386,8 @@ export class TitleScene {
 
     // Свет: рассеянный холодный сверху, тёплый контровой (даёт подсветку гривы и коры),
     // мягкая холодная подсветка спереди.
-    this.scene.add(new THREE.HemisphereLight(0xf4f9f6, 0x7a9a7e, 1.25));
-    const rim = new THREE.DirectionalLight(0xffd9a0, 1.45);
+    this.scene.add(new THREE.HemisphereLight(0xe8f4f2, 0x6d8f76, 1.0));
+    const rim = new THREE.DirectionalLight(0xffc478, 2.1);
     rim.position.set(4, 7.5, -6);
     rim.castShadow = true;
     rim.shadow.mapSize.set(512, 512);
@@ -539,9 +557,16 @@ export class TitleScene {
     this.scene.add(this.leaves.mesh);
     this.disposables.push(this.leaves.mesh.geometry, this.leaves.mesh.material as THREE.Material);
 
+    this.postfx = new PostFx(this.renderer, this.scene, this.camera, { quality: detectQuality() });
+
     this.resize(canvas.clientWidth, canvas.clientHeight);
     this.layout();
     this.animate();
+  }
+
+  /** Текущий уровень пост-обработки — для тестов и диагностики. */
+  get quality(): string {
+    return this.postfx ? (this.postfx as unknown as { constructor: { name: string } }).constructor.name : 'нет';
   }
 
   private placeCanopy(height: number, radius: number, material: THREE.Material, seed: number): THREE.Mesh {
@@ -589,6 +614,7 @@ export class TitleScene {
     this.camera.lookAt(0, LOOK_AT_HEIGHT, 0);
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(width, height, false);
+    this.postfx.setSize(width, height, Math.min(window.devicePixelRatio || 1, 2));
     this.layout();
   }
 
@@ -672,7 +698,7 @@ export class TitleScene {
     }
     mesh.instanceMatrix.needsUpdate = true;
 
-    this.renderer.render(this.scene, this.camera);
+    this.postfx.render();
 
     this.fpsAccum += delta;
     this.fpsFrames += 1;
@@ -684,7 +710,18 @@ export class TitleScene {
   };
 
   get stats(): TitleStats {
-    return { calls: this.renderer.info.render.calls, triangles: this.renderer.info.render.triangles, fps: this.fps };
+    let calls = 0;
+    let triangles = 0;
+    this.scene.traverse((child) => {
+      if (!(child instanceof THREE.Mesh)) return;
+      calls += 1;
+      const geometry = child.geometry as THREE.BufferGeometry & { index?: THREE.BufferAttribute | null };
+      const position = geometry.getAttribute('position');
+      const index = geometry.getIndex();
+      if (index) triangles += index.count / 3;
+      else if (position) triangles += position.count / 3;
+    });
+    return { calls, triangles: Math.round(triangles), fps: this.fps };
   }
 
   get objectCount(): number {
@@ -704,6 +741,7 @@ export class TitleScene {
 
   dispose(): void {
     cancelAnimationFrame(this.frame);
+    this.postfx.dispose();
     for (const item of this.disposables) item.dispose();
     this.scene.traverse((child) => {
       if (child instanceof THREE.Mesh) {

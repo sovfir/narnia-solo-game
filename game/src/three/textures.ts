@@ -294,3 +294,57 @@ export function mistTexture(): THREE.CanvasTexture {
   cache.set('mist', texture);
   return texture;
 }
+
+/** Мягкий шум для направления мазков: даёт живописные штрихи вместо круглых пятен. */
+export function strokeAngleTexture(): THREE.CanvasTexture {
+  const cached = cache.get('stroke-angle');
+  if (cached) return cached;
+
+  const context = makeCanvas(256, 256);
+  context.fillStyle = '#808080';
+  context.fillRect(0, 0, 256, 256);
+  for (let i = 0; i < 220; i += 1) {
+    const x = Math.random() * 256;
+    const y = Math.random() * 256;
+    const radius = 12 + Math.random() * 46;
+    const value = Math.random() * 255;
+    const gradient = context.createRadialGradient(x, y, 0, x, y, radius);
+    gradient.addColorStop(0, `rgba(${value}, ${value}, ${value}, 0.55)`);
+    gradient.addColorStop(1, 'rgba(128, 128, 128, 0)');
+    context.fillStyle = gradient;
+    context.fillRect(x - radius, y - radius, radius * 2, radius * 2);
+  }
+
+  const texture = toTexture(context, [1, 1]);
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  cache.set('stroke-angle', texture);
+  return texture;
+}
+
+/** Мягкая шерсть: бугристость для гривы и тела льва. */
+export function furTexture(): THREE.CanvasTexture {
+  const cached = cache.get('fur');
+  if (cached) return cached;
+
+  const context = makeCanvas(256, 256);
+  context.fillStyle = '#8c8c8c';
+  context.fillRect(0, 0, 256, 256);
+  for (let i = 0; i < 1400; i += 1) {
+    const x = Math.random() * 256;
+    const y = Math.random() * 256;
+    const length = 6 + Math.random() * 22;
+    context.globalAlpha = 0.10 + Math.random() * 0.25;
+    context.strokeStyle = Math.random() > 0.5 ? '#f0f0f0' : '#404040';
+    context.lineWidth = 1 + Math.random() * 1.6;
+    context.beginPath();
+    context.moveTo(x, y);
+    context.lineTo(x + (Math.random() - 0.5) * 5, y + length);
+    context.stroke();
+  }
+  context.globalAlpha = 1;
+
+  const texture = toTexture(context, [3, 3]);
+  cache.set('fur', texture);
+  return texture;
+}
