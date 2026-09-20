@@ -34,6 +34,9 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true,
+        // Новая версия сразу берёт управление: тогда офлайн работает уже после первого визита
+        clientsClaim: true,
+        skipWaiting: true,
       },
       devOptions: { enabled: false },
     }),

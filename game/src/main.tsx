@@ -16,7 +16,9 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
 const root = document.getElementById('app');
 if (!root) throw new Error('не найден #app');
 
-root.innerHTML = '<div class="screen screen--splash"><h1 class="splash__title">' +
+// Заглушка на время загрузки контента: отдельный класс, чтобы её нельзя было
+// спутать с настоящим сплэшем (тап по ней ничего не делает — она не интерактивна).
+root.innerHTML = '<div class="screen screen--boot"><h1 class="splash__title">' +
   'Колдунья и Книга заклинаний</h1><p class="splash__hint">Загрузка…</p></div>';
 
 async function boot(): Promise<void> {
@@ -40,6 +42,8 @@ async function boot(): Promise<void> {
     store.go('menu');                 // есть сохранение — предлагаем продолжить
   }
 
+  // Признак готовности приложения: по нему ждут e2e-тесты и внешние проверки.
+  document.documentElement.dataset.appReady = 'true';
   Object.assign(window, { __NARNIA__: { store } });
 }
 

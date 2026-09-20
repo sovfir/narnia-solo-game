@@ -30,7 +30,7 @@ test('игра запускается, играет и продолжает па
     if (message.type() === 'error') errors.push(message.text());
   });
 
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.getByText('Коснись экрана')).toBeVisible({ timeout: 15_000 });
   await page.screenshot({ path: 'test-results/01-splash.png' });
 
@@ -75,7 +75,7 @@ test('игра запускается, играет и продолжает па
   // сохранения: ручной слот и экспорт
   await page.getByRole('button', { name: 'Герой' }).click();
   await page.getByRole('button', { name: 'Вернуться в игру' }).click();
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.getByRole('button', { name: 'Сохранения' })).toBeVisible();
   await page.getByRole('button', { name: 'Сохранения' }).click();
   await expect(page.getByText('Автосохранение')).toBeVisible();
@@ -90,7 +90,7 @@ test('экран броска и настройки работают', async ({ 
   page.on('pageerror', (error) => errors.push(String(error)));
 
   // ссылка на конкретный узел: 160 — бросок на Красноречие
-  await page.goto('/#node=160');
+  await page.goto('./#node=160');
   await expect(page.getByText('Событие 160')).toBeVisible({ timeout: 15_000 });
 
   await page.getByRole('button', { name: 'Бросить кубики' }).click();
@@ -106,10 +106,10 @@ test('экран броска и настройки работают', async ({ 
   await expect(page.locator('.scene__node')).not.toContainText('Событие 160');
 
   // настройки: быстрые кубики и ночная тема
-  await page.goto('/#node=160');
+  await page.goto('./#node=160');
   await page.getByRole('button', { name: 'Герой' }).click();
   await page.getByRole('button', { name: 'Вернуться в игру' }).click();
-  await page.goto('/');
+  await page.goto('./');
   await page.getByRole('button', { name: 'Настройки' }).click();
   await expect(page.getByText('Оформление')).toBeVisible();
   await page.getByRole('button', { name: 'Ночь' }).click();
@@ -126,7 +126,7 @@ test('экран броска и настройки работают', async ({ 
 
 
 test('длинная сцена читается постранично', async ({ page }) => {
-  await page.goto('/#node=200');
+  await page.goto('./#node=200');
   await expect(page.locator('.scene__node')).toHaveText('Событие 200');
   await expect(page.locator('.pager')).toBeVisible();
   await expect(page.getByText(/Страница 1 из/)).toBeVisible();
@@ -140,7 +140,8 @@ test('длинная сцена читается постранично', async 
 
 
 test('экран «О Нарнии» читается из меню', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
+  await expect(page.getByText('Коснись экрана')).toBeVisible({ timeout: 20_000 });
   await page.locator('.screen--splash').click();        // сплэш → меню
   await page.getByRole('button', { name: 'О Нарнии' }).click();
   await expect(page.getByRole('button', { name: 'Основание Нарнии' })).toBeVisible();

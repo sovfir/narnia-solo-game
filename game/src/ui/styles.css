@@ -80,6 +80,9 @@ html, body {
 .btn--primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn--danger { border-color: var(--danger); color: var(--danger); }
 
+/* Заглушка загрузки */
+.screen--boot { justify-content: center; text-align: center; color: var(--ink-soft); }
+
 /* S1 сплэш */
 .screen--splash {
   justify-content: center;

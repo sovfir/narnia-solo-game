@@ -15,7 +15,8 @@
     "golden:gen": "node tools/golden-paths.ts",
     "e2e": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers playwright test",
     "e2e:install": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers playwright install chromium",
-    "check": "npm run typecheck && npm test && npm run build"
+    "check": "npm run typecheck && npm test && npm run build",
+    "deploy": "bash tools/deploy-pages.sh"
   },
   "dependencies": {
     "preact": "^10.24.0"

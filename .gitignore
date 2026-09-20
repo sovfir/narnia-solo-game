@@ -10,3 +10,6 @@ game/coverage/
 
 # система
 .DS_Store
+
+# рабочая копия для публикации на Pages
+.deploy/
