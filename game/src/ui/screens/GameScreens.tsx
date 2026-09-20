@@ -6,6 +6,9 @@ import type { JSX } from 'preact';
 import { useAppSnapshot, useStore } from '../../app/hooks.ts';
 import { Button, MarksGrid, SceneText, SkillsList, StatusBar } from '../components.tsx';
 import { DiceOverlay } from '../components/DiceOverlay.tsx';
+import { MapOverlay } from '../components/Map3D.tsx';
+import terrainJson from '../../content/terrain.json' with { type: 'json' };
+import type { TerrainEntry } from '../../three/lowpoly.ts';
 import { neighbours } from '../../engine/map.ts';
 import { KIND_LABELS, treasuresFor } from '../../content/treasures.ts';
 import { readingLabel, splitIntoPages } from '../reading.ts';
@@ -146,10 +149,17 @@ export function GameScreen(): JSX.Element {
       )}
 
       {mapOpen && (
-        <MapPicker
+        <MapOverlay
           current={state.square}
+          visited={state.visitedNodes
+            .map((id) => store.content.nodes.get(id)?.squares[0])
+            .filter((square): square is string => Boolean(square))}
+          entries={(terrainJson as { squares: TerrainEntry[] }).squares}
           onPick={(id) => store.moveTo(id)}
           onClose={() => store.closeMap()}
+          render2D={(inner) => (
+            <MapPicker current={inner.current} onPick={inner.onPick} onClose={inner.onClose} />
+          )}
         />
       )}
     </main>

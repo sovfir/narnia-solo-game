@@ -326,11 +326,15 @@ export function createStore(options: StoreOptions): AppStore {
     },
 
     startGameAt(node, hero) {
-      if (!content.nodes.has(node)) return false;
+      const target = content.nodes.get(node);
+      if (!target) return false;
       const chosen = hero ?? pendingHero ?? createReadyHero();
       const started = engine.start(chosen).state;
       pendingHero = null;
-      setState({ ...started, node, visitedNodes: [node] }, 'game');
+      // узел может называть текущий квадрат («Ты в квадрате 6Б») — учитываем это,
+      // иначе карта не знает, где герой, и вход по ссылке #node= выглядит пустым
+      const square = target.squares.length === 1 ? target.squares[0]! : started.square;
+      setState({ ...started, node, square, visitedNodes: [node] }, 'game');
       return true;
     },
 

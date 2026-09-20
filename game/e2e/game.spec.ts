@@ -1,5 +1,16 @@
 import { expect, test, type Page } from '@playwright/test';
 
+declare global {
+  interface Window {
+    __NARNIA_MAP__?: {
+      stats: () => { calls: number; triangles: number; fps: number };
+      heroInfo: () => { visible: boolean; x: number; y: number; z: number };
+      screenPositionOf: (id: string) => { x: number; y: number } | null;
+      resetCamera: () => void;
+    };
+  }
+}
+
 /**
  * Длинные сцены подаются постранично, поэтому перед выбором нужно
  * либо пролистать до конца, либо нажать «Показать всё».
@@ -150,4 +161,43 @@ test('экран «О Нарнии» читается из меню', async ({ p
   await page.screenshot({ path: 'test-results/10-lore.png' });
   await page.getByRole('button', { name: 'Следующий раздел ▸' }).click();
   await expect(page.getByText('Аслан вызывает тебя')).toBeVisible();
+});
+
+test('карта в 3D: герой виден, доска целиком в кадре, тап ведёт в соседний квадрат', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(String(error)));
+  page.on('console', (message) => { if (message.type() === 'error') errors.push(message.text()); });
+
+  await page.goto('./#node=292');                       // узел говорит «ты в квадрате 6Б»
+  await page.waitForFunction(() => document.documentElement.dataset.appReady === 'true', null, { timeout: 20_000 });
+  await revealActions(page);
+  await page.getByRole('button', { name: 'Вперёд' }).click();
+
+  await expect(page.locator('.map3d__canvas')).toBeVisible({ timeout: 20_000 });
+  await page.waitForFunction(() => Boolean(window.__NARNIA_MAP__), null, { timeout: 20_000 });
+  await page.waitForTimeout(600);
+
+  const info = await page.evaluate(() => {
+    const map = window.__NARNIA_MAP__!;
+    const ids = ['1А','1Б','1В','1Г','2А','2Б','2В','2Г','3А','3Б','3В','3Г','4А','4Б','4В','4Г','5А','5Б','5В','5Г','6А','6Б','6В','6Г'];
+    const rect = document.querySelector('.map3d__canvas')!.getBoundingClientRect();
+    const outside = ids.filter((id) => {
+      const point = map.screenPositionOf(id);
+      return !point || point.x < rect.left + 4 || point.x > rect.right - 4
+        || point.y < rect.top + 4 || point.y > rect.bottom - 4;
+    });
+    return { hero: map.heroInfo(), stats: map.stats(), outside, target: map.screenPositionOf('5Б') };
+  });
+
+  expect(info.hero.visible, 'фигурка героя должна быть на карте').toBe(true);
+  expect(info.outside, 'все 24 квадрата должны попадать в кадр').toEqual([]);
+  expect(info.stats.calls, 'бюджет §8.3 — не больше 40 draw calls').toBeLessThanOrEqual(40);
+  expect(info.stats.fps, 'карта должна рисоваться плавно').toBeGreaterThanOrEqual(25);
+
+  await page.screenshot({ path: 'test-results/11-map3d.png' });
+  await page.mouse.click(info.target!.x, info.target!.y);
+  await page.waitForTimeout(500);
+  await expect(page.locator('.scene__node')).not.toHaveText('Событие 292');
+
+  expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
 });

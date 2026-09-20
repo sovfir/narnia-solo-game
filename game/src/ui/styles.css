@@ -231,3 +231,13 @@ html, body {
 .pager { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .pager__count { font-family: var(--ui-font); font-size: 0.75rem; color: var(--ink-soft); margin-right: auto; }
 .pager .btn { min-height: 42px; padding: 8px 14px; font-size: 0.9rem; }
+
+/* 3D-карта */
+.overlay__panel--map { max-width: 560px; }
+.map3d { position: relative; width: 100%; aspect-ratio: 3 / 2; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #e9e2d2; }
+.map3d__canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+.map3d__canvas:active { cursor: grabbing; }
+.map3d__loading { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: #6b5b45; font-family: var(--ui-font); font-size: 0.85rem; }
+.map3d__hint { margin: 8px 0 0; font-family: var(--ui-font); font-size: 0.78rem; color: var(--ink); }
+.overlay__actions { display: flex; gap: 8px; }
+.overlay__actions .btn { flex: 1; }

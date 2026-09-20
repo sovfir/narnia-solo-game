@@ -144,3 +144,17 @@ describe('хранилище', () => {
     expect(store.getSnapshot().screen).toBe('menu');
   });
 });
+
+describe('вход по ссылке на узел', () => {
+  it('подхватывает квадрат, который называет узел', () => {
+    const store = createStore({ content, storage: fakeStorage(), now: () => 1 });
+    expect(store.startAt(292)).toBe(true);              // узел говорит «ты в квадрате 6Б»
+    expect(store.getSnapshot().state?.square).toBe('6Б');
+  });
+
+  it('для узла без квадрата оставляет позицию пустой', () => {
+    const store = createStore({ content, storage: fakeStorage(), now: () => 1 });
+    expect(store.startAt(160)).toBe(true);              // обычное событие без карты
+    expect(store.getSnapshot().state?.square).toBeNull();
+  });
+});
