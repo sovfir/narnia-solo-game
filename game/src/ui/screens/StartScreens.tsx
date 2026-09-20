@@ -34,6 +34,7 @@ export function MenuScreen(): JSX.Element {
         <Button kind={hasSave ? 'ghost' : 'primary'} onClick={() => store.go('hero')}>Новая игра</Button>
         <Button onClick={() => store.go('prologue')}>Как играть</Button>
         <Button onClick={() => store.go('saves')}>Сохранения</Button>
+        <Button onClick={() => store.go('settings')}>Настройки</Button>
         <Button onClick={() => store.go('gallery')}>Галерея концовок</Button>
       </div>
       <p class="menu__note">

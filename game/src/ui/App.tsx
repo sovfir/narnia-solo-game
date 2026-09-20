@@ -1,3 +1,4 @@
+import { useEffect } from 'preact/hooks';
 import type { JSX } from 'preact';
 
 import { useAppSnapshot } from '../app/hooks.ts';
@@ -5,10 +6,19 @@ import { GalleryScreen, HeroScreen, MenuScreen, PrologueScreen, SplashScreen } f
 import { GameScreen, JournalScreen, SheetScreen } from './screens/GameScreens.tsx';
 import { EndingScreen } from './screens/EndingScreen.tsx';
 import { SavesScreen } from './screens/SavesScreen.tsx';
+import { SettingsScreen } from './screens/SettingsScreen.tsx';
 
 /** Роутер без библиотеки: экран определяется состоянием хранилища. */
 export function App(): JSX.Element {
-  const { screen } = useAppSnapshot();
+  const { screen, settings } = useAppSnapshot();
+
+  // Тема применяется на <html>, чтобы её видели и системные элементы.
+  useEffect(() => {
+    const root = document.documentElement;
+    if (settings.theme === 'system') delete root.dataset.theme;
+    else root.dataset.theme = settings.theme;
+  }, [settings.theme]);
+
   switch (screen) {
     case 'splash':
       return <SplashScreen />;
@@ -26,6 +36,8 @@ export function App(): JSX.Element {
       return <GalleryScreen />;
     case 'saves':
       return <SavesScreen />;
+    case 'settings':
+      return <SettingsScreen />;
     case 'ending':
       return <EndingScreen />;
     case 'game':

@@ -5,6 +5,7 @@ import type { JSX } from 'preact';
 
 import { useAppSnapshot, useStore } from '../../app/hooks.ts';
 import { Button, MarksGrid, SceneText, SkillsList, StatusBar } from '../components.tsx';
+import { DiceOverlay } from '../components/DiceOverlay.tsx';
 import { neighbours } from '../../engine/map.ts';
 import type { SquareId } from '../../engine/types.ts';
 
@@ -49,28 +50,11 @@ function MapPicker(props: { onPick: (id: SquareId) => void; onClose: () => void;
   );
 }
 
-function DiceReveal(): JSX.Element | null {
-  const { state } = useAppSnapshot();
-  const roll = state?.lastRoll;
-  if (!roll) return null;
-  return (
-    <div class="dice">
-      <div class="dice__die">{roll.dice[0]}</div>
-      <div class="dice__die">{roll.dice[1]}</div>
-      <div class="dice__sum">
-        = {roll.total}
-        {roll.skill ? ` ${roll.skillValue >= 0 ? '+' : ''}${roll.skillValue}` : ''}
-        {' → '}
-        <b>{roll.result}</b>
-      </div>
-    </div>
-  );
-}
-
 export function GameScreen(): JSX.Element {
   const store = useStore();
-  const { state, mapOpen } = useAppSnapshot();
+  const { state, mapOpen, settings } = useAppSnapshot();
   const [showRollback, setShowRollback] = useState(false);
+  const [diceOpen, setDiceOpen] = useState(false);
 
   if (!state) {
     return (
@@ -101,11 +85,9 @@ export function GameScreen(): JSX.Element {
         <SceneText text={node.narrative} />
       </section>
 
-      {state.lastRoll && <DiceReveal />}
-
       <section class="actions">
         {canRoll && (
-          <Button kind="primary" onClick={() => store.roll()}>
+          <Button kind="primary" onClick={() => { store.roll(); setDiceOpen(true); }}>
             {node.check?.skill ? 'Бросить кубики' : 'Выбрать число'}
           </Button>
         )}
@@ -130,6 +112,14 @@ export function GameScreen(): JSX.Element {
             <Button onClick={() => setShowRollback(false)}>Отмена</Button>
           </div>
         </div>
+      )}
+
+      {diceOpen && state.lastRoll && (
+        <DiceOverlay
+          roll={state.lastRoll}
+          speed={settings.diceSpeed}
+          onClose={() => setDiceOpen(false)}
+        />
       )}
 
       {mapOpen && (

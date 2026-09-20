@@ -60,3 +60,42 @@ test('игра запускается, играет и продолжает па
 
   expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
 });
+
+test('экран броска и настройки работают', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(String(error)));
+
+  // ссылка на конкретный узел: 160 — бросок на Красноречие
+  await page.goto('/#node=160');
+  await expect(page.getByText('Событие 160')).toBeVisible({ timeout: 15_000 });
+
+  await page.getByRole('button', { name: 'Бросить кубики' }).click();
+  const overlay = page.locator('.dice-panel');
+  await expect(overlay).toBeVisible();
+  await expect(overlay.getByText('Бросок кубиков')).toBeVisible();
+  // анимация завершается, появляется итог и кнопка «Дальше»
+  await expect(overlay.getByRole('button', { name: 'Дальше' })).toBeVisible({ timeout: 10_000 });
+  await expect(overlay.getByText(/Итог/)).toBeVisible();
+  await page.screenshot({ path: 'test-results/07-dice.png' });
+  await overlay.getByRole('button', { name: 'Дальше' }).click();
+  await expect(overlay).toHaveCount(0);
+  await expect(page.locator('.scene__node')).not.toContainText('Событие 160');
+
+  // настройки: быстрые кубики и ночная тема
+  await page.goto('/#node=160');
+  await page.getByRole('button', { name: 'Герой' }).click();
+  await page.getByRole('button', { name: 'Вернуться в игру' }).click();
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Настройки' }).click();
+  await expect(page.getByText('Оформление')).toBeVisible();
+  await page.getByRole('button', { name: 'Ночь' }).click();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'night');
+  await page.getByRole('button', { name: 'Быстро' }).click();
+  await page.screenshot({ path: 'test-results/08-settings.png' });
+
+  // настройки переживают перезагрузку
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('data-theme', 'night');
+
+  expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
+});

@@ -181,3 +181,33 @@ html, body {
 .slot__actions .btn { flex: 1; min-width: 90px; font-size: 0.9rem; }
 .json { width: 100%; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem; padding: 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); resize: vertical; }
 .hint--ok { color: var(--accent); }
+
+/* Явно выбранная тема (S14): перекрывает системную */
+:root[data-theme='parchment'] {
+  --bg: #f3e9d7; --bg-soft: #e8dcc3; --ink: #2c2318; --ink-soft: #6b5b45;
+  --accent: #8c5a2b; --accent-ink: #fff8ec; --danger: #8f2f2f; --line: #cbb894;
+}
+:root[data-theme='night'] {
+  --bg: #14100d; --bg-soft: #1f1813; --ink: #f0e6d2; --ink-soft: #b9a88d;
+  --accent: #d7a463; --accent-ink: #1b1410; --danger: #e08a8a; --line: #473726;
+}
+
+/* Экран броска S10 */
+.dice-panel { text-align: center; align-items: center; }
+.dice--tumble .dice__die { animation: dice-tumble 0.28s infinite; }
+.dice--tumble .dice__die:nth-child(2) { animation-delay: 0.09s; }
+.dice--sum .dice__die, .dice--result .dice__die {
+  animation: dice-settle 0.32s ease-out;
+  background: var(--accent); color: var(--accent-ink); border-color: var(--accent);
+}
+@keyframes dice-tumble {
+  0% { transform: rotate(-8deg) translateY(-4px); }
+  50% { transform: rotate(8deg) translateY(2px); }
+  100% { transform: rotate(-8deg) translateY(-4px); }
+}
+@keyframes dice-settle {
+  from { transform: scale(1.18); }
+  to { transform: scale(1); }
+}
+.dice-panel__line { margin: 0; color: var(--ink-soft); }
+.dice-panel__result { color: var(--ink); }

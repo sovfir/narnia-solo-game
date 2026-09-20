@@ -32,8 +32,13 @@ async function boot(): Promise<void> {
     root!,
   );
 
-  // Если партия сохранена — предлагаем меню, а не сплэш новой игры.
-  if (store.getSnapshot().hasSave) store.go('menu');
+  // Ссылка вида index.html#node=160 открывает нужный узел — так удобно проверять сцены.
+  const requested = new URLSearchParams(window.location.hash.replace(/^#/, '')).get('node');
+  if (requested && store.startAt(Number(requested))) {
+    // партия начата на нужном узле
+  } else if (store.getSnapshot().hasSave) {
+    store.go('menu');                 // есть сохранение — предлагаем продолжить
+  }
 
   Object.assign(window, { __NARNIA__: { store } });
 }

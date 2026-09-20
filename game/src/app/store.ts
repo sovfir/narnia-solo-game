@@ -13,7 +13,7 @@ import { createReadyHero, type Hero } from '../engine/hero.ts';
 import type { Content, SquareId } from '../engine/types.ts';
 
 export type Screen =
-  | 'splash' | 'menu' | 'hero' | 'prologue' | 'game' | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves';
+  | 'splash' | 'menu' | 'hero' | 'prologue' | 'game' | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves' | 'settings';
 
 export type SaveSlot = 'auto' | 'slot1' | 'slot2' | 'slot3';
 
@@ -28,6 +28,18 @@ export const SLOT_LABELS: Record<SaveSlot, string> = {
 
 /** Автослот исторически лежит под этим ключом — менять нельзя, иначе потеряются партии. */
 export const SAVE_KEY = 'narnia.save.v1';
+export const SETTINGS_KEY = 'narnia.settings.v1';
+
+export interface Settings {
+  /** Тема оформления: пергамент, ночь или как в системе (§3.1). */
+  theme: 'parchment' | 'night' | 'system';
+  /** Скорость анимации кубиков (§S10). */
+  diceSpeed: 'normal' | 'fast';
+  /** Показывать ли подсказки в сложных узлах (§6.9). */
+  hints: boolean;
+}
+
+export const DEFAULT_SETTINGS: Settings = { theme: 'system', diceSpeed: 'normal', hints: true };
 export const GALLERY_KEY = 'narnia.gallery.v1';
 export const SAVE_VERSION = 1;
 
@@ -74,6 +86,7 @@ export interface AppSnapshot {
   gallery: number[];
   /** Сохранения по слотам — для экрана «Сохранения». */
   saves: SaveInfo[];
+  settings: Settings;
 }
 
 export type Listener = (snapshot: AppSnapshot) => void;
@@ -107,6 +120,15 @@ export interface AppStore {
   saveTo(slot: SaveSlot): boolean;
   /** Загрузить партию из слота. */
   loadFrom(slot: SaveSlot): boolean;
+  /** Изменить настройку и сохранить её. */
+  setSetting<K extends keyof Settings>(key: K, value: Settings[K]): void;
+  /**
+   * Начать партию сразу с указанного узла.
+   * Нужно для проверки сцен: `index.html#node=160` открывает нужный узел.
+   */
+  startAt(node: number): boolean;
+  /** Сбросить весь прогресс: сохранения и галерею. */
+  resetProgress(): void;
   deleteSlot(slot: SaveSlot): void;
   listSaves(): SaveInfo[];
   /** Сохранение в виде JSON-строки для экспорта. */
@@ -156,6 +178,14 @@ export function createStore(options: StoreOptions): AppStore {
     now,
     ...(options.startNode !== undefined ? { startNode: options.startNode } : {}),
   });
+
+  let settings: Settings = { ...DEFAULT_SETTINGS };
+  try {
+    const raw = storage?.getItem(SETTINGS_KEY);
+    if (raw) settings = { ...DEFAULT_SETTINGS, ...(JSON.parse(raw) as Partial<Settings>) };
+  } catch {
+    settings = { ...DEFAULT_SETTINGS };
+  }
 
   let gallery: number[] = [];
   try {
@@ -212,6 +242,7 @@ export function createStore(options: StoreOptions): AppStore {
       hasSave: storage?.getItem(SAVE_KEY) !== null,
       gallery,
       saves: listSaves(),
+      settings,
     };
   }
 
@@ -349,6 +380,33 @@ export function createStore(options: StoreOptions): AppStore {
 
     deleteSlot(slot) {
       storage?.removeItem(slotKey(slot));
+      emit();
+    },
+
+    setSetting(key, value) {
+      settings = { ...settings, [key]: value };
+      try {
+        storage?.setItem(SETTINGS_KEY, JSON.stringify(settings));
+      } catch {
+        /* настройки не критичны */
+      }
+      emit();
+    },
+
+    startAt(node) {
+      if (!content.nodes.has(node)) return false;
+      const started = engine.start(createReadyHero()).state;
+      setState({ ...started, node, visitedNodes: [node] }, 'game');
+      return true;
+    },
+
+    resetProgress() {
+      for (const slot of SAVE_SLOTS) storage?.removeItem(slotKey(slot));
+      gallery = [];
+      storage?.removeItem(GALLERY_KEY);
+      state = null;
+      screen = 'menu';
+      mapOpen = false;
       emit();
     },
 
