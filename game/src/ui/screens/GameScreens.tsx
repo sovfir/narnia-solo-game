@@ -1,6 +1,6 @@
 /** Экраны игры: S8 сцена с действиями, карта, S12 лист персонажа, S13 дневник. */
 
-import { useState } from 'preact/hooks';
+import { useEffect, useMemo, useState } from 'preact/hooks';
 import type { JSX } from 'preact';
 
 import { useAppSnapshot, useStore } from '../../app/hooks.ts';
@@ -8,6 +8,7 @@ import { Button, MarksGrid, SceneText, SkillsList, StatusBar } from '../componen
 import { DiceOverlay } from '../components/DiceOverlay.tsx';
 import { neighbours } from '../../engine/map.ts';
 import { KIND_LABELS, treasuresFor } from '../../content/treasures.ts';
+import { readingLabel, splitIntoPages } from '../reading.ts';
 import type { SquareId } from '../../engine/types.ts';
 
 function MapPicker(props: { onPick: (id: SquareId) => void; onClose: () => void; current: SquareId | null }): JSX.Element {
@@ -56,6 +57,8 @@ export function GameScreen(): JSX.Element {
   const { state, mapOpen, settings } = useAppSnapshot();
   const [showRollback, setShowRollback] = useState(false);
   const [diceOpen, setDiceOpen] = useState(false);
+  const [page, setPage] = useState(0);
+  const [showAll, setShowAll] = useState(false);
 
   if (!state) {
     return (
@@ -67,6 +70,15 @@ export function GameScreen(): JSX.Element {
   }
 
   const node = store.engine.node(state);
+  const pages = useMemo(() => splitIntoPages(node.narrative), [node.narrative]);
+  const lastPage = page >= pages.length - 1;
+
+  // новая сцена читается с первой страницы
+  useEffect(() => {
+    setPage(0);
+    setShowAll(false);
+  }, [node.id]);
+
   const choices = store.engine.choices(state);
   const canRoll = node.check !== null;
   const canForward = node.forward || node.squares.length > 0;
@@ -83,10 +95,20 @@ export function GameScreen(): JSX.Element {
       <section class="scene">
         {state.square && <p class="scene__place">Квадрат {state.square}</p>}
         <p class="scene__node">Событие {node.id}</p>
-        <SceneText text={node.narrative} />
+        {readingLabel(node.narrative) && <p class="scene__time">{readingLabel(node.narrative)}</p>}
+        <SceneText text={showAll ? node.narrative : (pages[page] ?? node.narrative)} />
+        {pages.length > 1 && !showAll && (
+          <div class="pager">
+            <span class="pager__count">Страница {page + 1} из {pages.length}</span>
+            {!lastPage && (
+              <Button kind="ghost" onClick={() => setPage((value) => value + 1)}>Дальше ▸</Button>
+            )}
+            <Button kind="ghost" onClick={() => setShowAll(true)}>Показать всё</Button>
+          </div>
+        )}
       </section>
 
-      <section class="actions">
+      <section class="actions" hidden={!showAll && !lastPage}>
         {canRoll && (
           <Button kind="primary" onClick={() => { store.roll(); setDiceOpen(true); }}>
             {node.check?.skill ? 'Бросить кубики' : 'Выбрать число'}

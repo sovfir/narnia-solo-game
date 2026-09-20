@@ -1,4 +1,18 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+
+/**
+ * Длинные сцены подаются постранично, поэтому перед выбором нужно
+ * либо пролистать до конца, либо нажать «Показать всё».
+ */
+async function revealActions(page: Page): Promise<void> {
+  const showAll = page.getByRole('button', { name: 'Показать всё' });
+  if (await showAll.count() > 0) await showAll.click();
+  for (let step = 0; step < 6; step += 1) {
+    const next = page.getByRole('button', { name: 'Дальше ▸' });
+    if (await next.count() === 0) break;
+    await next.click();
+  }
+}
 
 /** Полный путь игрока: сплэш → меню → герой → сцена → сохранение → продолжение. */
 
@@ -98,4 +112,18 @@ test('экран броска и настройки работают', async ({ 
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'night');
 
   expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
+});
+
+
+test('длинная сцена читается постранично', async ({ page }) => {
+  await page.goto('/#node=200');
+  await expect(page.locator('.scene__node')).toHaveText('Событие 200');
+  await expect(page.locator('.pager')).toBeVisible();
+  await expect(page.getByText(/Страница 1 из/)).toBeVisible();
+  await expect(page.locator('.actions')).toBeHidden();
+
+  await page.getByRole('button', { name: 'Показать всё' }).click();
+  await expect(page.locator('.actions')).toBeVisible();
+  await expect(page.locator('.pager')).toHaveCount(0);
+  await page.screenshot({ path: 'test-results/09-long-scene.png' });
 });
