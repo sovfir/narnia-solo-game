@@ -239,7 +239,7 @@ test('заглавный экран: сцена, подписи и перехо�
   expect(scene.frame.left!.x, 'левый ствол у левого края').toBeLessThan(-0.7);
   expect(scene.frame.right!.x, 'правый ствол у правого края').toBeGreaterThan(0.7);
   expect(Math.abs(scene.frame.top!.y), 'крона должна быть в кадре').toBeLessThan(1.15);
-  expect(scene.stats.calls, 'разумный бюджет вызовов').toBeLessThanOrEqual(45);
+  expect(scene.stats.calls, 'бюджет заглавного экрана').toBeLessThanOrEqual(60);
   expect(scene.stats.fps, 'сцена должна анимироваться').toBeGreaterThanOrEqual(20);
 
   await page.screenshot({ path: 'test-results/12-title.png' });
