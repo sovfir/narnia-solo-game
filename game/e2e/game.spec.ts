@@ -247,3 +247,42 @@ test('заглавный экран: сцена, подписи и перехо�
   await expect(page.getByRole('button', { name: 'Новая игра' })).toBeVisible();
   expect(errors, `ошибки в консоли: ${errors.join(' | ')}`).toEqual([]);
 });
+
+test('заглавный экран: на телефоне и на мониторе композиция одинаковая', async ({ browser }) => {
+  const sizes = [
+    { name: 'телефон', viewport: { width: 393, height: 851 } },
+    { name: 'монитор', viewport: { width: 1440, height: 900 } },
+  ] as const;
+
+  const compositions: { name: string; stage: [number, number]; left: number; right: number; top: number }[] = [];
+
+  for (const size of sizes) {
+    const context = await browser.newContext({ viewport: size.viewport });
+    const page = await context.newPage();
+    await page.goto('./');
+    await page.waitForFunction(() => Boolean(window.__NARNIA_TITLE__), null, { timeout: 25_000 });
+    await page.waitForTimeout(500);
+    const info = await page.evaluate(() => {
+      const title = window.__NARNIA_TITLE__!;
+      const stage = document.querySelector('.title__stage')!.getBoundingClientRect();
+      return {
+        stage: [Math.round(stage.width), Math.round(stage.height)] as [number, number],
+        left: title.screenPositionOf('leftFrame')!.x,
+        right: title.screenPositionOf('rightFrame')!.x,
+        top: title.screenPositionOf('canopyTop')!.y,
+        overflow: document.documentElement.scrollWidth > window.innerWidth + 2,
+      };
+    });
+    expect(info.overflow, `${size.name}: горизонтальной прокрутки быть не должно`).toBe(false);
+    const stageAspect = info.stage[0] / info.stage[1];
+    expect(stageAspect, `${size.name}: сцена должна быть портретной`).toBeLessThan(0.8);
+    compositions.push({ name: size.name, ...info });
+    await context.close();
+  }
+
+  // композиция задаётся в долях кадра, поэтому на обоих экранах рама стоит на месте
+  for (const key of ['left', 'right', 'top'] as const) {
+    const [a, b] = compositions;
+    expect(Math.abs(a![key] - b![key]), `${key}: рама не должна уезжать между экранами`).toBeLessThan(0.02);
+  }
+});

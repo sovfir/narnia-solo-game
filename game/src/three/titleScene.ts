@@ -38,7 +38,7 @@ const PALETTE = {
   lionBodyDark: 0xd79a3f,
   lionMane: 0xd07f28,
   lionManeLight: 0xf6cc7f,
-  muzzle: 0xfaf0dc,
+  muzzle: 0xd9a75f,
   face: 0x2c1a12,
   cloth: 0xffffff,
   clothDark: 0x8f1610,
@@ -129,7 +129,11 @@ function buildCanopy(radius: number, material: THREE.Material, seed: number): TH
   return new THREE.Mesh(mergePieces(pieces), material);
 }
 
-/** Лев: мягкие объёмы вместо граней. */
+/**
+ * Лев по референсу `pics/lion_reference.jpg`: сидит анфас, грива — объёмная гранёная
+ * «шапка» с V-выступом на груди (без шипов), морда вытянутая, нос-треугольник,
+ * глаза узкими щелями, уши видны в гриве.
+ */
 function buildLion(): {
   group: THREE.Group;
   head: THREE.Group;
@@ -138,118 +142,122 @@ function buildLion(): {
   chest: THREE.Object3D;
 } {
   const group = new THREE.Group();
-  const bodyMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionBody, roughness: 0.85, metalness: 0 });
-  const darkMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionBodyDark, roughness: 0.9, metalness: 0 });
-  const maneMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionMane, roughness: 0.95, metalness: 0 });
-  const maneLightMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionManeLight, roughness: 0.95, metalness: 0 });
-  const muzzleMaterial = new THREE.MeshStandardMaterial({ color: 0xcf9a63, roughness: 0.85, metalness: 0 });
-  const faceMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.face, roughness: 0.6, metalness: 0 });
+  const bodyMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionBody, roughness: 0.9, metalness: 0 });
+  const bodyDarkMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionBodyDark, roughness: 0.92, metalness: 0 });
+  const maneMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionMane, roughness: 0.95, metalness: 0, flatShading: true });
+  const maneLightMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.lionManeLight, roughness: 0.95, metalness: 0, flatShading: true });
+  const muzzleMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.muzzle, roughness: 0.85, metalness: 0 });
+  const faceMaterial = new THREE.MeshStandardMaterial({ color: PALETTE.face, roughness: 0.45, metalness: 0 });
 
-  // корпус: три пересекающихся объёма дают плавный силуэт
-  const chest = new THREE.Mesh(new THREE.SphereGeometry(0.44, 16, 12), bodyMaterial);
-  chest.position.set(0, 0.94, 0.42);
-  group.add(chest);
-
-  // лапы: плавно сужающиеся
-  const legs: Piece[] = [];
-  const paws: Piece[] = [];
-  for (const [x, z] of [[-0.25, 0.5], [0.25, 0.5], [-0.27, -0.88], [0.27, -0.88]] as const) {
-    legs.push({ geometry: new THREE.CylinderGeometry(0.075, 0.1, 1.0, 12), position: [x, 0.5, z] });
-    paws.push({ geometry: new THREE.SphereGeometry(0.12, 12, 9), position: [x, 0.08, z + 0.08], scale: [1, 0.7, 1.35] });
-  }
-  const bodyAndLegs = mergePieces([
-    { geometry: new THREE.SphereGeometry(0.5, 18, 14), position: [0, 0.95, -0.15], scale: [1.85, 0.86, 0.82] },
-    { geometry: new THREE.SphereGeometry(0.42, 16, 12), position: [0, 0.9, 0.45] },
-    { geometry: new THREE.SphereGeometry(0.42, 16, 12), position: [0, 0.92, -0.9], scale: [1, 0.96, 1] },
-    ...legs,
-  ]);
-  group.add(new THREE.Mesh(bodyAndLegs, bodyMaterial));
-  group.add(new THREE.Mesh(mergePieces(paws), darkMaterial));
-
-  // голова
-  const head = new THREE.Group();
-  head.position.set(0, 1.34, 0.82);
-
-  head.add(new THREE.Mesh(mergePieces([
-    { geometry: new THREE.SphereGeometry(0.29, 18, 14), scale: [0.92, 0.96, 1.06] },
-    { geometry: new THREE.SphereGeometry(0.2, 14, 11), position: [0, -0.07, 0.28], scale: [0.85, 0.8, 1.5] },
+  // Корпус сидящего льва: вытянутая грудь, угловатый зад, бёдра по бокам
+  group.add(new THREE.Mesh(mergePieces([
+    { geometry: new THREE.IcosahedronGeometry(0.42, 0), position: [-0.36, 0.42, -0.34], scale: [1, 0.95, 1.15] },
+    { geometry: new THREE.IcosahedronGeometry(0.42, 0), position: [0.36, 0.42, -0.34], scale: [1, 0.95, 1.15] },
+    { geometry: new THREE.SphereGeometry(0.44, 16, 12), position: [0, 1.04, -0.12], scale: [1.05, 1.35, 0.95] },
+    { geometry: new THREE.SphereGeometry(0.44, 16, 12), position: [0, 0.9, -0.58], scale: [1, 0.92, 1.05] },
+    { geometry: new THREE.SphereGeometry(0.28, 14, 11), position: [0, 1.46, 0.04], scale: [1.05, 0.9, 1] },
   ]), bodyMaterial));
 
-  const muzzle = new THREE.Mesh(new THREE.SphereGeometry(0.17, 14, 11), muzzleMaterial);
-  muzzle.scale.set(0.95, 0.75, 1.5);
-  muzzle.position.set(0, -0.1, 0.34);
-  head.add(muzzle);
-
-  const face = new THREE.Mesh(mergePieces([
-    { geometry: new THREE.SphereGeometry(0.042, 10, 8), position: [-0.12, 0.09, 0.27] },
-    { geometry: new THREE.SphereGeometry(0.042, 10, 8), position: [0.12, 0.09, 0.27] },
-    { geometry: new THREE.SphereGeometry(0.055, 10, 8), position: [0, 0.0, 0.52], scale: [1, 0.8, 0.9] },
-  ]), faceMaterial);
-  head.add(face);
-
-  // грива: три слоя мягких прядей, светлые вперемешку
-  const mane: Piece[] = [];
-  const maneLight: Piece[] = [];
-  const rings = [
-    { count: 14, radius: 0.38, size: 0.13, z: 0.0, y: 0.05 },
-    { count: 16, radius: 0.47, size: 0.12, z: -0.14, y: -0.04 },
-    { count: 16, radius: 0.54, size: 0.11, z: -0.3, y: -0.18 },
-  ];
-  rings.forEach((ring, ringIndex) => {
-    for (let i = 0; i < ring.count; i += 1) {
-      const angle = (i / ring.count) * Math.PI * 2 + ringIndex * 0.28;
-      const piece: Piece = {
-        geometry: new THREE.SphereGeometry(ring.size, 10, 8),
-        position: [
-          Math.sin(angle) * ring.radius,
-          ring.y + Math.cos(angle) * ring.radius * 0.82,
-          ring.z + Math.cos(angle) * 0.08,
-        ],
-        scale: [1.05, 1.08, 0.7],
-      };
-      (i % 3 === 0 ? maneLight : mane).push(piece);
+  // Лапы: передние длинные с округлыми подушками и намёком на пальцы
+  const legs: Piece[] = [];
+  const paws: Piece[] = [];
+  for (const x of [-0.24, 0.24]) {
+    legs.push({ geometry: new THREE.CylinderGeometry(0.095, 0.115, 0.98, 12), position: [x, 0.52, 0.22] });
+    paws.push({ geometry: new THREE.SphereGeometry(0.14, 12, 10), position: [x, 0.09, 0.3], scale: [1.05, 0.62, 1.5] });
+    for (const dx of [-0.06, 0, 0.06]) {
+      paws.push({ geometry: new THREE.SphereGeometry(0.045, 8, 6), position: [x + dx, 0.05, 0.46] });
     }
-  });
-  for (let i = 0; i < 4; i += 1) {
-    mane.push({
-      geometry: new THREE.SphereGeometry(0.17, 10, 8),
-      position: [(i - 1.5) * 0.16, -0.46, 0.2 - Math.abs(i - 1.5) * 0.05],
-      scale: [1, 1.35, 0.9],
-    });
   }
-  head.add(new THREE.Mesh(mergePieces(mane), maneMaterial));
+  for (const x of [-0.44, 0.44]) {
+    legs.push({ geometry: new THREE.CylinderGeometry(0.115, 0.135, 0.52, 12), position: [x, 0.3, -0.18], rotation: [1.0, 0, 0] });
+    paws.push({ geometry: new THREE.SphereGeometry(0.15, 12, 10), position: [x, 0.09, 0.06], scale: [1.1, 0.62, 1.6] });
+  }
+  group.add(new THREE.Mesh(mergePieces(legs), bodyMaterial));
+  group.add(new THREE.Mesh(mergePieces(paws), bodyDarkMaterial));
+
+  const chest = new THREE.Mesh(new THREE.SphereGeometry(0.44, 16, 12), bodyMaterial);
+  chest.position.set(0, 1.0, 0.16);
+  chest.scale.set(1.0, 1.15, 0.95);
+  group.add(chest);
+
+  // Голова
+  const head = new THREE.Group();
+  head.position.set(0, 1.78, 0.14);
+
+  head.add(new THREE.Mesh(mergePieces([
+    { geometry: new THREE.SphereGeometry(0.29, 18, 14), scale: [1.0, 0.96, 1.06] },
+    { geometry: new THREE.CylinderGeometry(0.09, 0.19, 0.36, 8), position: [0, -0.13, 0.3], rotation: [Math.PI / 2, 0, 0], scale: [0.86, 1, 1] },
+    { geometry: new THREE.SphereGeometry(0.09, 10, 8), position: [0, -0.25, 0.3], scale: [1.2, 0.9, 1] },
+    { geometry: new THREE.BoxGeometry(0.34, 0.05, 0.14), position: [0, 0.12, 0.24] },
+  ]), bodyMaterial));
+
+  // Нос-треугольник, линия рта, усы-подушечки
+  head.add(new THREE.Mesh(new THREE.ConeGeometry(0.075, 0.1, 3), faceMaterial)
+    .translateY(0).translateZ(0));
+  const noseMesh = head.children[head.children.length - 1] as THREE.Mesh;
+  noseMesh.position.set(0, -0.08, 0.47);
+  noseMesh.rotation.set(Math.PI / 2, 0, Math.PI);
+
+  // только тонкая линия рта: никаких светлых «зубов»
+  head.add(new THREE.Mesh(new THREE.BoxGeometry(0.13, 0.012, 0.08), faceMaterial)
+    .translateY(0).translateZ(0));
+  const mouth = head.children[head.children.length - 1] as THREE.Mesh;
+  mouth.position.set(0, -0.22, 0.4);
+
+  // Узкие глаза-щели
+  head.add(new THREE.Mesh(mergePieces([
+    { geometry: new THREE.SphereGeometry(0.062, 10, 8), position: [-0.15, 0.05, 0.27], scale: [1.9, 0.3, 0.5], rotation: [0, 0, 0.34] },
+    { geometry: new THREE.SphereGeometry(0.062, 10, 8), position: [0.15, 0.05, 0.27], scale: [1.9, 0.3, 0.5], rotation: [0, 0, -0.34] },
+  ]), faceMaterial));
+
+  // Грива: гранёная объёмная «шапка» + V-выступ на груди (никаких шипов)
+  const maneDark: Piece[] = [
+    { geometry: new THREE.IcosahedronGeometry(0.66, 0), position: [0, -0.06, -0.18], scale: [1.18, 1.22, 0.6] },
+    // боковые пряди выходят вперёд и обрамляют морду
+    { geometry: new THREE.IcosahedronGeometry(0.3, 0), position: [-0.42, 0.06, 0.06], scale: [0.95, 1.15, 0.6], rotation: [0, 0, 0.5] },
+    { geometry: new THREE.IcosahedronGeometry(0.3, 0), position: [0.42, 0.06, 0.06], scale: [0.95, 1.15, 0.6], rotation: [0, 0, -0.5] },
+    { geometry: new THREE.IcosahedronGeometry(0.26, 0), position: [-0.3, -0.36, 0.16], scale: [0.95, 1.2, 0.6], rotation: [0, 0, 0.25] },
+    { geometry: new THREE.IcosahedronGeometry(0.26, 0), position: [0.3, -0.36, 0.16], scale: [0.95, 1.2, 0.6], rotation: [0, 0, -0.25] },
+    { geometry: new THREE.IcosahedronGeometry(0.3, 0), position: [-0.3, -0.62, 0.02], scale: [1, 1.3, 0.68] },
+    { geometry: new THREE.IcosahedronGeometry(0.3, 0), position: [0.3, -0.62, 0.02], scale: [1, 1.3, 0.68] },
+    { geometry: new THREE.IcosahedronGeometry(0.32, 0), position: [0, -0.8, 0.06], scale: [1.05, 1.2, 0.68] },
+    { geometry: new THREE.IcosahedronGeometry(0.42, 0), position: [-0.56, -0.24, -0.1], scale: [0.95, 1.15, 0.62] },
+    { geometry: new THREE.IcosahedronGeometry(0.42, 0), position: [0.56, -0.24, -0.1], scale: [0.95, 1.15, 0.62] },
+  ];
+  const maneLight: Piece[] = [
+    { geometry: new THREE.IcosahedronGeometry(0.34, 0), position: [0, 0.34, -0.04], scale: [1.2, 0.8, 0.7] },
+    { geometry: new THREE.IcosahedronGeometry(0.28, 0), position: [-0.5, 0.16, -0.02], scale: [0.95, 1, 0.62], rotation: [0, 0, 0.35] },
+    { geometry: new THREE.IcosahedronGeometry(0.28, 0), position: [0.5, 0.16, -0.02], scale: [0.95, 1, 0.62], rotation: [0, 0, -0.35] },
+  ];
+  head.add(new THREE.Mesh(mergePieces(maneDark), maneMaterial));
   head.add(new THREE.Mesh(mergePieces(maneLight), maneLightMaterial));
 
-  // уши
+  // Уши видны в гриве сверху
   const ears: THREE.Object3D[] = [];
-  for (const x of [-0.19, 0.19]) {
-    const ear = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 9), maneMaterial);
-    ear.scale.set(1, 1.15, 0.55);
-    ear.position.set(x, 0.27, 0.02);
-    ear.rotation.z = x < 0 ? 0.34 : -0.34;
+  for (const x of [-0.23, 0.23]) {
+    const ear = new THREE.Mesh(new THREE.ConeGeometry(0.095, 0.17, 5), maneLightMaterial);
+    ear.position.set(x, 0.3, 0.06);
+    ear.rotation.z = x < 0 ? 0.4 : -0.4;
     head.add(ear);
     ears.push(ear);
   }
 
   group.add(head);
 
-  // хвост
+  // Короткий хвост за корпусом
   const tail: THREE.Group[] = [];
   let parent: THREE.Object3D = group;
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < 2; i += 1) {
     const segment = new THREE.Group();
-    segment.position.set(0, i === 0 ? 1.06 : 0.02, i === 0 ? -1.2 : -0.28);
-    const mesh = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.062 - i * 0.009, 0.072 - i * 0.009, 0.3, 10),
-      bodyMaterial,
-    );
-    mesh.rotation.x = Math.PI / 2;
-    mesh.position.z = -0.15;
+    segment.position.set(0, i === 0 ? 0.5 : 0.02, i === 0 ? -0.94 : -0.3);
+    const mesh = new THREE.Mesh(new THREE.CylinderGeometry(0.07 - i * 0.012, 0.08 - i * 0.012, 0.32, 10), bodyMaterial);
+    mesh.rotation.x = Math.PI / 2 + 0.5;
+    mesh.position.z = -0.16;
     segment.add(mesh);
-    if (i === 2) {
-      const tuft = new THREE.Mesh(new THREE.SphereGeometry(0.13, 12, 10), maneMaterial);
-      tuft.scale.set(0.85, 0.85, 1.5);
-      tuft.position.z = -0.36;
+    if (i === 1) {
+      const tuft = new THREE.Mesh(new THREE.IcosahedronGeometry(0.11, 0), maneMaterial);
+      tuft.scale.set(0.9, 1.5, 0.9);
+      tuft.position.set(0, -0.18, -0.3);
       segment.add(tuft);
     }
     parent.add(segment);
@@ -257,7 +265,7 @@ function buildLion(): {
     tail.push(segment);
   }
 
-  group.scale.setScalar(1.3);
+  group.scale.setScalar(1.16);
   return { group, head, tail, ears, chest };
 }
 
@@ -515,13 +523,13 @@ export class TitleScene {
 
     // Аслан и путник
     this.lion = buildLion();
-    this.lion.group.position.set(-1.35, 0, 0.1);
-    this.lion.group.rotation.y = -0.62;   // три четверти, как в референсе
+    this.lion.group.position.set(-0.85, 0, 0.4);
+    this.lion.group.rotation.y = -0.18;   // почти фронтально, как на львином референсе
     this.lion.group.traverse((child) => { if (child instanceof THREE.Mesh) child.castShadow = true; });
     this.scene.add(this.lion.group);
 
     this.traveler = buildTraveler();
-    this.traveler.group.position.set(1.05, 0, 2.1);
+    this.traveler.group.position.set(1.15, 0, 2.25);
     this.traveler.group.rotation.y = -0.85;
     this.traveler.group.traverse((child) => { if (child instanceof THREE.Mesh) child.castShadow = true; });
     this.scene.add(this.traveler.group);
@@ -573,8 +581,11 @@ export class TitleScene {
   resize(width: number, height: number): void {
     const aspect = width / Math.max(1, height);
     this.camera.aspect = aspect;
-    const distance = 7.4 + Math.max(0, aspect - 0.66) * 5.5;
-    this.camera.position.set(0, CAMERA_HEIGHT + Math.max(0, aspect - 0.66) * 0.5, distance);
+    // Сцена отрисовывается в кадр постоянного формата, поэтому камера стоит на месте:
+    // композиция не «прыгает» между телефоном и монитором. Небольшой отъезд остаётся
+    // только на случай экстремально широкого кадра.
+    const distance = 7.4 + Math.max(0, aspect - 1.0) * 3.0;
+    this.camera.position.set(0, CAMERA_HEIGHT + Math.max(0, aspect - 1.0) * 0.4, distance);
     this.camera.lookAt(0, LOOK_AT_HEIGHT, 0);
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(width, height, false);

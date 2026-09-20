@@ -86,8 +86,10 @@ export function Splash3D(): JSX.Element {
       tabIndex={0}
       onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') store.go('menu'); }}
     >
-      <canvas ref={canvasRef} class="title__canvas" aria-hidden="true" />
-      {!ready && !failed && <div class="title__loading">Собираем Нарнию…</div>}
+      <div class="title__stage">
+        <canvas ref={canvasRef} class="title__canvas" aria-hidden="true" />
+        {!ready && !failed && <div class="title__loading">Собираем Нарнию…</div>}
+      </div>
 
       <div class="title__overlay">
         <header class="title__head">
