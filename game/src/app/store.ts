@@ -13,7 +13,8 @@ import { createReadyHero, type Hero } from '../engine/hero.ts';
 import type { Content, SquareId } from '../engine/types.ts';
 
 export type Screen =
-  | 'splash' | 'menu' | 'hero' | 'prologue' | 'game' | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves' | 'settings';
+  | 'splash' | 'menu' | 'hero' | 'prologue' | 'rules' | 'game'
+  | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves' | 'settings';
 
 export type SaveSlot = 'auto' | 'slot1' | 'slot2' | 'slot3';
 
@@ -87,6 +88,8 @@ export interface AppSnapshot {
   /** Сохранения по слотам — для экрана «Сохранения». */
   saves: SaveInfo[];
   settings: Settings;
+  /** Герой, выбранный на экране создания: партия начнётся после пролога. */
+  pendingHero: Hero | null;
 }
 
 export type Listener = (snapshot: AppSnapshot) => void;
@@ -106,6 +109,10 @@ export interface AppStore {
   subscribe(listener: Listener): () => void;
 
   go(screen: Screen): void;
+  /** Выбрать героя и показать пролог: партия ещё не начата. */
+  beginGame(hero: Hero): void;
+  /** Начать партию сразу с узла (используется прологом и ссылкой #node=NNN). */
+  startGameAt(node: number, hero?: Hero): boolean;
   newGame(hero: Hero): void;
   quickStart(): void;
   choose(index: number): void;
@@ -199,6 +206,7 @@ export function createStore(options: StoreOptions): AppStore {
   let state: GameState | null = null;
   let screen: Screen = 'splash';
   let mapOpen = false;
+  let pendingHero: Hero | null = null;
 
   function readSlot(slot: SaveSlot): { save: SaveFile | null; broken: boolean } {
     const raw = storage?.getItem(slotKey(slot));
@@ -243,6 +251,7 @@ export function createStore(options: StoreOptions): AppStore {
       gallery,
       saves: listSaves(),
       settings,
+      pendingHero,
     };
   }
 
@@ -308,7 +317,25 @@ export function createStore(options: StoreOptions): AppStore {
       emit();
     },
 
+    beginGame(hero) {
+      pendingHero = hero;
+      state = null;
+      screen = 'prologue';
+      mapOpen = false;
+      emit();
+    },
+
+    startGameAt(node, hero) {
+      if (!content.nodes.has(node)) return false;
+      const chosen = hero ?? pendingHero ?? createReadyHero();
+      const started = engine.start(chosen).state;
+      pendingHero = null;
+      setState({ ...started, node, visitedNodes: [node] }, 'game');
+      return true;
+    },
+
     newGame(hero) {
+      pendingHero = null;
       setState(engine.start(hero).state, 'game');
     },
 
@@ -350,6 +377,7 @@ export function createStore(options: StoreOptions): AppStore {
 
     restart() {
       state = null;
+      pendingHero = null;
       screen = 'menu';
       mapOpen = false;
       storage?.removeItem(slotKey('auto'));
@@ -394,10 +422,7 @@ export function createStore(options: StoreOptions): AppStore {
     },
 
     startAt(node) {
-      if (!content.nodes.has(node)) return false;
-      const started = engine.start(createReadyHero()).state;
-      setState({ ...started, node, visitedNodes: [node] }, 'game');
-      return true;
+      return store.startGameAt(node);
     },
 
     resetProgress() {
@@ -405,6 +430,7 @@ export function createStore(options: StoreOptions): AppStore {
       gallery = [];
       storage?.removeItem(GALLERY_KEY);
       state = null;
+      pendingHero = null;
       screen = 'menu';
       mapOpen = false;
       emit();

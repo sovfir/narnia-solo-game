@@ -4,6 +4,13 @@ import { expect, test, type Page } from '@playwright/test';
  * Длинные сцены подаются постранично, поэтому перед выбором нужно
  * либо пролистать до конца, либо нажать «Показать всё».
  */
+/** Пролог книги: листаем до развилки и выбираем «я здесь впервые». */
+async function passPrologue(page: Page): Promise<void> {
+  await expect(page.getByText('Предисловие').first()).toBeVisible({ timeout: 15_000 });
+  await page.getByRole('button', { name: 'Пропустить пролог' }).click();
+  await page.getByRole('button', { name: 'Я здесь впервые' }).click();
+}
+
 async function revealActions(page: Page): Promise<void> {
   const showAll = page.getByRole('button', { name: 'Показать всё' });
   if (await showAll.count() > 0) await showAll.click();
@@ -35,6 +42,9 @@ test('игра запускается, играет и продолжает па
   await page.screenshot({ path: 'test-results/02-hero.png' });
 
   await page.getByRole('button', { name: 'Начать с Робин' }).click();
+  await expect(page.getByText('София')).toBeVisible();          // предисловие героя
+  await page.screenshot({ path: 'test-results/02b-preface.png' });
+  await passPrologue(page);
   await expect(page.getByText('Событие 317')).toBeVisible();
   await expect(page.getByText('Дитя Адама и Евы')).toBeVisible();
   await page.screenshot({ path: 'test-results/03-scene.png' });

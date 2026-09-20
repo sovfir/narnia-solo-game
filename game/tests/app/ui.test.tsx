@@ -69,7 +69,7 @@ describe('интерфейс', () => {
     expect(root.textContent).toContain('Новая игра');
   });
 
-  it('ведёт от меню через выбор героя в игровой экран', async () => {
+  it('ведёт от меню через выбор героя и пролог в игровой экран', async () => {
     store.go('menu');
     await tick();
     await tick();
@@ -79,9 +79,39 @@ describe('интерфейс', () => {
 
     buttonByText(root, 'Начать с Робин').click();
     await tick();
+    await tick();
+
+    // сначала книга: предисловие и пролог, партия ещё не начата
+    expect(store.getSnapshot().state).toBeNull();
+    expect(root.textContent).toContain('Предисловие');
+    expect(root.textContent).toContain('София');
+
+    // пролистываем до конца и выбираем развилку пролога
+    buttonByText(root, 'Пропустить пролог').click();
+    await tick();
+    buttonByText(root, 'Я здесь впервые').click();
+    await tick();
+    await tick();
+
     expect(store.getSnapshot().state?.node).toBe(317);
     expect(root.textContent).toContain('Событие 317');
     expect(root.textContent).toContain('Дитя Адама и Евы');
+  });
+
+  it('для готового героя показывает предисловие, для своего — нет', async () => {
+    const { createReadyHero, createCustomHero } = await import('../../src/engine/hero.ts');
+
+    store.beginGame(createReadyHero());
+    await tick();
+    await tick();
+    expect(root.textContent).toContain('Предисловие');
+
+    store.beginGame(createCustomHero('Свой', { grip: 3, agility: 3 }));
+    await tick();
+    await tick();
+    expect(root.textContent).toContain('Пролог');
+    expect(root.textContent).toContain('Ужасные школьные дни');   // сразу пролог
+    expect(root.textContent).not.toContain('София');              // предисловие пропущено
   });
 
   it('выбор кнопки меняет сцену, а статус-бар открывает лист персонажа', async () => {

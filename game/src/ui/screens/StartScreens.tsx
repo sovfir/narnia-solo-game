@@ -3,8 +3,12 @@
 import { useState } from 'preact/hooks';
 import type { JSX } from 'preact';
 
+import { useMemo } from 'preact/hooks';
+
 import { useStore, useAppSnapshot } from '../../app/hooks.ts';
-import { Button, SkillsList } from '../components.tsx';
+import { PREFACE, PROLOGUE, PROLOGUE_CHOICES } from '../../content/prologue.ts';
+import { splitIntoPages } from '../reading.ts';
+import { Button, SceneText, SkillsList } from '../components.tsx';
 import {
   MAX_SKILL, TOTAL_LEVELS, UNTRAINED_SKILL,
   createCustomHero, createReadyHero, validateDistribution,
@@ -32,7 +36,7 @@ export function MenuScreen(): JSX.Element {
       <div class="menu__actions">
         {hasSave && <Button kind="primary" onClick={() => store.continueSaved()}>Продолжить</Button>}
         <Button kind={hasSave ? 'ghost' : 'primary'} onClick={() => store.go('hero')}>Новая игра</Button>
-        <Button onClick={() => store.go('prologue')}>Как играть</Button>
+        <Button onClick={() => store.go('rules')}>Как играть</Button>
         <Button onClick={() => store.go('saves')}>Сохранения</Button>
         <Button onClick={() => store.go('settings')}>Настройки</Button>
         <Button onClick={() => store.go('gallery')}>Галерея концовок</Button>
@@ -77,7 +81,7 @@ export function HeroScreen(): JSX.Element {
   const valid = validateDistribution(distribution).ok;
 
   function start(hero: Hero): void {
-    store.newGame(hero);      // партия начинается с узла 317 — сцена Аслана
+    store.beginGame(hero);    // сначала пролог книги, партия начнётся после него
   }
 
   return (
@@ -140,21 +144,13 @@ export function HeroScreen(): JSX.Element {
   );
 }
 
-export function PrologueScreen(): JSX.Element {
+export function RulesScreen(): JSX.Element {
   const store = useStore();
   const { state, hasSave } = useAppSnapshot();
   return (
     <main class="screen screen--prologue">
       <h2 class="screen__title">Как играть</h2>
       <div class="card scene">
-        <p>
-          Ты — дитя Адама и Евы, и Нарния ждёт тебя. Аслан даёт задание: найти
-          волшебную книгу, пока Белая Колдунья не собрала её силу.
-        </p>
-        <p>
-          Карта — 24 квадрата. Выбор за тобой: где-то нужна Хватка, где-то Красноречие,
-          а где-то достаточно вовремя вспомнить, кого ты уже встречал.
-        </p>
         <ul class="rules">
           <li><b>Кубики.</b> Два кубика (2–12) плюс уровень навыка; всё выше 12 считается за 12, ниже 2 — за 2.</li>
           <li><b>Отметки.</b> «Поставь отметку N» — память игры. Она вернётся в проверках «проверь ключ N».</li>
@@ -173,6 +169,64 @@ export function PrologueScreen(): JSX.Element {
         {!state && hasSave && <Button kind="primary" onClick={() => store.continueSaved()}>Продолжить партию</Button>}
         <Button onClick={() => store.go('menu')}>Назад</Button>
       </div>
+    </main>
+  );
+}
+
+/**
+ * Пролог книги: «Предисловие» (предыстория героя) и «ПРОЛОГ» (прибытие в Нарнию),
+ * затем развилка — был ты здесь раньше или нет (узлы 494 и 317).
+ */
+export function PrologueScreen(): JSX.Element {
+  const store = useStore();
+  const { pendingHero } = useAppSnapshot();
+  const [page, setPage] = useState(0);
+
+  const sections = useMemo(() => {
+    const list: { title: string; text: string }[] = [];
+    // «Предисловие» читается за готового героя (так сказано в книге)
+    if (!pendingHero || pendingHero.kind === 'ready') {
+      for (const text of splitIntoPages(PREFACE, 800)) list.push({ title: 'Предисловие', text });
+    }
+    for (const text of splitIntoPages(PROLOGUE, 800)) list.push({ title: 'Пролог', text });
+    return list;
+  }, [pendingHero]);
+
+  const current = sections[page];
+  const lastPage = page >= sections.length - 1;
+
+  return (
+    <main class="screen screen--prologue">
+      <h2 class="screen__title">{current?.title ?? 'Пролог'}</h2>
+      <div class="card scene">
+        <SceneText text={current?.text ?? ''} />
+      </div>
+      <p class="hint">
+        Страница {page + 1} из {sections.length}
+        {pendingHero ? ` · герой: ${pendingHero.name}` : ''}
+      </p>
+
+      {lastPage ? (
+        <div class="menu__actions">
+          <p class="hint">С этого места книга спрашивает:</p>
+          {PROLOGUE_CHOICES.map((choice) => (
+            <Button
+              key={choice.node}
+              kind="primary"
+              onClick={() => store.startGameAt(choice.node)}
+              title={choice.hint}
+            >
+              {choice.label}
+            </Button>
+          ))}
+        </div>
+      ) : (
+        <div class="pager">
+          <span class="pager__count">Читай дальше — впереди Нарния</span>
+          <Button kind="primary" onClick={() => setPage((value) => value + 1)}>Дальше ▸</Button>
+          <Button kind="ghost" onClick={() => setPage(sections.length - 1)}>Пропустить пролог</Button>
+        </div>
+      )}
     </main>
   );
 }

@@ -35,6 +35,27 @@ describe('хранилище', () => {
     expect(store.getSnapshot().screen).toBe('game');
   });
 
+  it('выбор героя ведёт в пролог, партия начинается только после развилки', () => {
+    const storage = fakeStorage();
+    const store = createStore({ content, storage, now: () => 1 });
+
+    store.beginGame(createReadyHero());
+    expect(store.getSnapshot().screen).toBe('prologue');
+    expect(store.getSnapshot().state).toBeNull();
+    expect(store.getSnapshot().pendingHero?.name).toBe('Робин Трэверсток');
+    expect(storage.getItem(SAVE_KEY)).toBeNull();          // пролог ничего не сохраняет
+
+    expect(store.startGameAt(317)).toBe(true);
+    expect(store.getSnapshot().state?.node).toBe(317);
+    expect(store.getSnapshot().screen).toBe('game');
+    expect(store.getSnapshot().pendingHero).toBeNull();
+
+    // второй вариант пролога — «я уже бывал в Нарнии»
+    store.beginGame(createReadyHero());
+    expect(store.startGameAt(494)).toBe(true);
+    expect(store.getSnapshot().state?.node).toBe(494);
+  });
+
   it('пишет автосохранение после каждого хода', () => {
     const storage = fakeStorage();
     const store = createStore({ content, storage, now: () => 5 });

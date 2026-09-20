@@ -2,7 +2,7 @@ import { useEffect } from 'preact/hooks';
 import type { JSX } from 'preact';
 
 import { useAppSnapshot } from '../app/hooks.ts';
-import { GalleryScreen, HeroScreen, MenuScreen, PrologueScreen, SplashScreen } from './screens/StartScreens.tsx';
+import { GalleryScreen, HeroScreen, MenuScreen, PrologueScreen, RulesScreen, SplashScreen } from './screens/StartScreens.tsx';
 import { GameScreen, JournalScreen, SheetScreen } from './screens/GameScreens.tsx';
 import { EndingScreen } from './screens/EndingScreen.tsx';
 import { SavesScreen } from './screens/SavesScreen.tsx';
@@ -28,6 +28,8 @@ export function App(): JSX.Element {
       return <HeroScreen />;
     case 'prologue':
       return <PrologueScreen />;
+    case 'rules':
+      return <RulesScreen />;
     case 'sheet':
       return <SheetScreen />;
     case 'journal':
