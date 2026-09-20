@@ -1,0 +1,7293 @@
+{
+ "generatedAt": "2026-09-19T23:59:55.745Z",
+ "contentChecksum": "04e49244",
+ "endings": 15,
+ "paths": [
+  {
+   "ending": 104,
+   "kind": "death",
+   "foundByRun": 7,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    }
+   ]
+  },
+  {
+   "ending": 125,
+   "kind": "death",
+   "foundByRun": 18,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    }
+   ]
+  },
+  {
+   "ending": 128,
+   "kind": "death",
+   "foundByRun": 9,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "6А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    }
+   ]
+  },
+  {
+   "ending": 137,
+   "kind": "death",
+   "foundByRun": 12,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "6А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "roll",
+     "total": 3
+    }
+   ]
+  },
+  {
+   "ending": 182,
+   "kind": "death",
+   "foundByRun": 24,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "choose",
+     "index": 0
+    }
+   ]
+  },
+  {
+   "ending": 221,
+   "kind": "death",
+   "foundByRun": 63,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    }
+   ]
+  },
+  {
+   "ending": 235,
+   "kind": "victory",
+   "foundByRun": 3,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "forward",
+     "to": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "forward",
+     "to": "6А"
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 3
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "forward",
+     "to": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    }
+   ]
+  },
+  {
+   "ending": 301,
+   "kind": "death",
+   "foundByRun": 102,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 2
+    }
+   ]
+  },
+  {
+   "ending": 309,
+   "kind": "death",
+   "foundByRun": 6,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "3Г"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "forward",
+     "to": "3Г"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 4
+    }
+   ]
+  },
+  {
+   "ending": 426,
+   "kind": "death",
+   "foundByRun": 1,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    }
+   ]
+  },
+  {
+   "ending": 480,
+   "kind": "death",
+   "foundByRun": 2809,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "forward",
+     "to": "6А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 3
+    }
+   ]
+  },
+  {
+   "ending": 516,
+   "kind": "death",
+   "foundByRun": 76,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 5
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "6А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 3
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "4Г"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "forward",
+     "to": "5В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4Б"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 8
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "roll",
+     "total": 2
+    }
+   ]
+  },
+  {
+   "ending": 526,
+   "kind": "fall",
+   "foundByRun": 2199,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6В"
+    },
+    {
+     "type": "forward",
+     "to": "5Г"
+    },
+    {
+     "type": "forward",
+     "to": "6Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 4
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "4А"
+    },
+    {
+     "type": "forward",
+     "to": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 6
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "roll",
+     "total": 7
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 12
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 9
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "4А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 10
+    },
+    {
+     "type": "enterSquare",
+     "id": "6А"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "5А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "5Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "6Б"
+    },
+    {
+     "type": "forward",
+     "to": "6А"
+    },
+    {
+     "type": "forward",
+     "to": "5Б"
+    },
+    {
+     "type": "forward",
+     "to": "4В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Г"
+    },
+    {
+     "type": "forward",
+     "to": "2В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "1Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "forward",
+     "to": "3Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 11
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "forward",
+     "to": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 2
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Г"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "enterSquare",
+     "id": "1В"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3В"
+    },
+    {
+     "type": "forward",
+     "to": "2Г"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Г"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2В"
+    },
+    {
+     "type": "forward",
+     "to": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "3В"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "forward",
+     "to": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "forward",
+     "to": "1Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "3А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "2Б"
+    },
+    {
+     "type": "forward",
+     "to": "1В"
+    },
+    {
+     "type": "forward",
+     "to": "2Б"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1А"
+    },
+    {
+     "type": "enterSquare",
+     "id": "1Б"
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    }
+   ]
+  },
+  {
+   "ending": 542,
+   "kind": "death",
+   "foundByRun": 34,
+   "steps": [
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "choose",
+     "index": 0
+    },
+    {
+     "type": "roll",
+     "total": 2
+    },
+    {
+     "type": "choose",
+     "index": 1
+    },
+    {
+     "type": "roll",
+     "total": 3
+    }
+   ]
+  }
+ ]
+}

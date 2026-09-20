@@ -46,7 +46,7 @@ export interface GameState {
   ending: EndingKind | null;
   finished: boolean;
   /** Последний бросок — для экрана S10. */
-  lastRoll: { dice: [number, number]; total: number; result: number; skill: SkillId | null } | null;
+  lastRoll: { dice: [number, number]; total: number; result: number; skill: SkillId | null; skillValue: number } | null;
 }
 
 export type Action =
@@ -235,7 +235,11 @@ export function createEngine(content: Content, options: EngineOptions = {}): Eng
         next.history.push(snapshot(state));
         if (node.check.skill) next.tempMods = spendTempMods(state.tempMods, node.check.skill);
         next.lastRoll = {
-          dice: outcome.dice, total: outcome.total, result: outcome.result, skill: node.check.skill,
+          dice: outcome.dice,
+          total: outcome.total,
+          result: outcome.result,
+          skill: node.check.skill,
+          skillValue: base + bonus,
         };
         next.journal = [
           ...state.journal,
