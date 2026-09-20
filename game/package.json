@@ -14,7 +14,8 @@
     "content:build": "python3 scripts/build_content.py && python3 scripts/merge_labels.py && python3 scripts/validate_content.py",
     "golden:gen": "node tools/golden-paths.ts",
     "e2e": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers playwright test",
-    "e2e:install": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers playwright install chromium"
+    "e2e:install": "PLAYWRIGHT_BROWSERS_PATH=./.playwright-browsers playwright install chromium",
+    "check": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
     "preact": "^10.24.0"

@@ -211,3 +211,11 @@ html, body {
 }
 .dice-panel__line { margin: 0; color: var(--ink-soft); }
 .dice-panel__result { color: var(--ink); }
+
+/* Ключи и сокровища */
+.treasures { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.treasure { display: flex; flex-direction: column; border-left: 3px solid var(--line); padding-left: 10px; }
+.treasure--key { border-left-color: var(--accent); }
+.treasure--gem { border-left-color: #7c9c6b; }
+.treasure--boon { border-left-color: var(--ink-soft); }
+.treasure__name { font-size: 0.95rem; }

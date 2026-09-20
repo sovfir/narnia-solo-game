@@ -7,6 +7,7 @@ import { useAppSnapshot, useStore } from '../../app/hooks.ts';
 import { Button, MarksGrid, SceneText, SkillsList, StatusBar } from '../components.tsx';
 import { DiceOverlay } from '../components/DiceOverlay.tsx';
 import { neighbours } from '../../engine/map.ts';
+import { KIND_LABELS, treasuresFor } from '../../content/treasures.ts';
 import type { SquareId } from '../../engine/types.ts';
 
 function MapPicker(props: { onPick: (id: SquareId) => void; onClose: () => void; current: SquareId | null }): JSX.Element {
@@ -146,6 +147,23 @@ export function SheetScreen(): JSX.Element {
         </p>
         <SkillsList state={state} />
       </div>
+      {treasuresFor(state.marks).length > 0 && (
+        <div class="card">
+          <h3 class="card__title">Ключи и сокровища</h3>
+          <ul class="treasures">
+            {treasuresFor(state.marks).map((treasure) => (
+              <li key={treasure.mark} class={`treasure treasure--${treasure.kind}`}>
+                <span class="treasure__name">{treasure.name}</span>
+                <span class="hint">
+                  {KIND_LABELS[treasure.kind]} · отметка {treasure.mark}
+                  {treasure.note ? ` · ${treasure.note}` : ''}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div class="card">
         <h3 class="card__title">Отметки путешествия</h3>
         <MarksGrid marks={state.marks} />
