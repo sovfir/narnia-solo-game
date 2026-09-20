@@ -7,6 +7,7 @@ import { GameScreen, JournalScreen, SheetScreen } from './screens/GameScreens.ts
 import { EndingScreen } from './screens/EndingScreen.tsx';
 import { SavesScreen } from './screens/SavesScreen.tsx';
 import { SettingsScreen } from './screens/SettingsScreen.tsx';
+import { LoreScreen } from './screens/LoreScreen.tsx';
 
 /** Роутер без библиотеки: экран определяется состоянием хранилища. */
 export function App(): JSX.Element {
@@ -40,6 +41,8 @@ export function App(): JSX.Element {
       return <SavesScreen />;
     case 'settings':
       return <SettingsScreen />;
+    case 'lore':
+      return <LoreScreen />;
     case 'ending':
       return <EndingScreen />;
     case 'game':

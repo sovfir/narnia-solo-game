@@ -137,3 +137,16 @@ test('длинная сцена читается постранично', async 
   await expect(page.locator('.pager')).toHaveCount(0);
   await page.screenshot({ path: 'test-results/09-long-scene.png' });
 });
+
+
+test('экран «О Нарнии» читается из меню', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('.screen--splash').click();        // сплэш → меню
+  await page.getByRole('button', { name: 'О Нарнии' }).click();
+  await expect(page.getByRole('button', { name: 'Основание Нарнии' })).toBeVisible();
+  await page.getByRole('button', { name: 'Основание Нарнии' }).click();
+  await expect(page.getByText('Нарния, Нарния, Нарния')).toBeVisible();
+  await page.screenshot({ path: 'test-results/10-lore.png' });
+  await page.getByRole('button', { name: 'Следующий раздел ▸' }).click();
+  await expect(page.getByText('Аслан вызывает тебя')).toBeVisible();
+});

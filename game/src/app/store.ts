@@ -14,7 +14,7 @@ import type { Content, SquareId } from '../engine/types.ts';
 
 export type Screen =
   | 'splash' | 'menu' | 'hero' | 'prologue' | 'rules' | 'game'
-  | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves' | 'settings';
+  | 'sheet' | 'journal' | 'ending' | 'gallery' | 'saves' | 'settings' | 'lore';
 
 export type SaveSlot = 'auto' | 'slot1' | 'slot2' | 'slot3';
 

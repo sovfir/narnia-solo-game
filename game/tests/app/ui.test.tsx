@@ -132,6 +132,22 @@ describe('интерфейс', () => {
     expect(root.textContent).toContain('Отметки путешествия');
   });
 
+  it('показывает разделы «О Нарнии» из меню', async () => {
+    store.go('menu');
+    await tick();
+    await tick();
+    buttonByText(root, 'О Нарнии').click();
+    await tick();
+    await tick();
+    expect(root.textContent).toContain('О Нарнии');
+    expect(root.textContent).toContain('Основание Нарнии');
+    expect(root.textContent).toContain('Аслан');
+
+    buttonByText(root, 'Основание Нарнии').click();
+    await tick();
+    expect(root.textContent).toContain('Нарния, Нарния, Нарния');
+  });
+
   it('показывает дневник решений', async () => {
     store.quickStart();
     await tick();
