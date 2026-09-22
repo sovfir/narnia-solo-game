@@ -1,51 +1,5 @@
 [
  {
   "name": "forest"
- },
- {
-  "name": "clouds_far",
-  "mask": "clouds-mask",
-  "tile": "clouds-tile",
-  "depth": 34,
-  "scroll": [
-   0.012,
-   0.0
-  ],
-  "repeat": [
-   2,
-   2
-  ],
-  "opacity": 0.4
- },
- {
-  "name": "clouds",
-  "mask": "clouds-mask2",
-  "tile": "clouds-tile",
-  "depth": 26,
-  "scroll": [
-   0.028,
-   0.001
-  ],
-  "repeat": [
-   2,
-   1
-  ],
-  "opacity": 0.5
- },
- {
-  "name": "water",
-  "mask": "sea-mask",
-  "tile": "water-tile",
-  "depth": 16,
-  "scroll": [
-   0.01,
-   0.005
-  ],
-  "repeat": [
-   2,
-   2
-  ],
-  "ripple": 0.014,
-  "foam": 0.16
  }
 ]
