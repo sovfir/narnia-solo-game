@@ -1,5 +1,34 @@
 [
- "forest",
- "trunk_left",
- "trunk_right"
+ {
+  "name": "forest"
+ },
+ {
+  "name": "water",
+  "mask": "sea-mask",
+  "tile": "water-tile",
+  "depth": 16,
+  "scroll": [
+   0.012,
+   0.006
+  ],
+  "repeat": [
+   2,
+   2
+  ]
+ },
+ {
+  "name": "clouds",
+  "mask": "clouds-mask",
+  "tile": "clouds-tile",
+  "depth": 30,
+  "scroll": [
+   0.03,
+   0.002
+  ],
+  "repeat": [
+   2,
+   2
+  ],
+  "opacity": 0.85
+ }
 ]
